@@ -54,7 +54,7 @@ function ChatPage({ user }: { user: Session | null }) {
         <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
           <div className="flex flex-row gap-4">
             <a
-              href="https://github.com/dhravya/opensearch"
+              href="https://github.com/supermemoryai/opensearch-ai"
               className="fixed flex items-center justify-between gap-4 left-0 top-0 w-full border-b border-gray-300 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto  lg:rounded-xl lg:border lg:p-4 bg-white px-2 md:px-0"
             >
               Open source{' '}
