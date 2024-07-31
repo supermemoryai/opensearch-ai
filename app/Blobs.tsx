@@ -62,45 +62,45 @@ const Blobs: React.FC = () => {
   return (
     <div className="absolute w-full border overflow-hidden -z-10">
       <Blob
-        className="bg-[#FFC3F0] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-multiply"
+        className="bg-[#FFA07A] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-multiply"
         animationName="animateBlob1"
-        duration="7.5s"
+        duration="12s"
         initialPosition={randomPosition()}
       />
       <Blob
-        className="bg-[#D2CFFE] w-[500px] h-[500px] blur-3xl scale-75 md:scale-10 mix-blend-color"
+        className="bg-[#98FB98] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
         animationName="animateBlob2"
-        duration="9s"
-        initialPosition={randomPosition()}
-      />
-      <Blob
-        className="bg-[#FEEBCF] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
-        animationName="animateBlob3"
-        duration="10s"
-        initialPosition={randomPosition()}
-      />
-      <Blob
-        className="bg-[#E6FFA2] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
-        animationName="animateBlob4"
-        duration="12.5s"
-        initialPosition={randomPosition()}
-      />
-      <Blob
-        className="bg-[#C3F4FF] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
-        animationName="animateBlob5"
         duration="15s"
         initialPosition={randomPosition()}
       />
       <Blob
-        className="bg-[#7dffad] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
-        animationName="animateBlob5"
-        duration="17.5s"
+        className="bg-[#87CEFA] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
+        animationName="animateBlob3"
+        duration="18s"
         initialPosition={randomPosition()}
       />
       <Blob
-        className="bg-[#ff75da] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
+        className="bg-[#FFD700] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
+        animationName="animateBlob4"
+        duration="21s"
+        initialPosition={randomPosition()}
+      />
+      <Blob
+        className="bg-[#BA55D3] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
         animationName="animateBlob5"
-        duration="20s"
+        duration="24s"
+        initialPosition={randomPosition()}
+      />
+      <Blob
+        className="bg-[#40E0D0] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
+        animationName="animateBlob6"
+        duration="27s"
+        initialPosition={randomPosition()}
+      />
+      <Blob
+        className="bg-[#FF6347] w-[500px] h-[500px] blur-3xl scale-75 md:scale-100 mix-blend-color"
+        animationName="animateBlob7"
+        duration="30s"
         initialPosition={randomPosition()}
       />
     </div>
