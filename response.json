@@ -1,0 +1,624 @@
+{
+    "query": {
+        "original": "dhravya shah",
+        "show_strict_warning": false,
+        "is_navigational": false,
+        "is_news_breaking": false,
+        "spellcheck_off": true,
+        "country": "us",
+        "bad_results": false,
+        "should_fallback": false,
+        "postal_code": "",
+        "city": "",
+        "header_country": "",
+        "more_results_available": true,
+        "state": ""
+    },
+    "mixed": {
+        "type": "mixed",
+        "main": [
+            {
+                "type": "web",
+                "index": 0,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 1,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 2,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 3,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 4,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 5,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 6,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 7,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 8,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 9,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 10,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 11,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 12,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 13,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 14,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 15,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 16,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 17,
+                "all": false
+            },
+            {
+                "type": "web",
+                "index": 18,
+                "all": false
+            }
+        ],
+        "top": [],
+        "side": []
+    },
+    "type": "search",
+    "web": {
+        "type": "search",
+        "results": [
+            {
+                "title": "Dhravya Shah (@DhravyaShah) · X",
+                "url": "https://twitter.com/DhravyaShah",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "The latest tweets from <strong>Dhravya</strong> <strong>Shah</strong> (@DhravyaShah)",
+                "profile": {
+                    "name": "X",
+                    "url": "https://twitter.com/DhravyaShah",
+                    "long_name": "twitter.com",
+                    "img": "https://imgs.search.brave.com/wWeP6Pa-JGi7cDBqMPkc4Ckai-nUQl4uFSKrw0evyx4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "twitter.com",
+                    "hostname": "twitter.com",
+                    "favicon": "https://imgs.search.brave.com/wWeP6Pa-JGi7cDBqMPkc4Ckai-nUQl4uFSKrw0evyx4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8",
+                    "path": "› DhravyaShah"
+                }
+            },
+            {
+                "title": "Dhravya Shah",
+                "url": "https://dhravya.dev/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "Developer, 2x acquired Founder, Content Creator, Indie Hacker, OSS Contributor, Guitarist and Student. I play read, write and travel for fun.",
+                "profile": {
+                    "name": "Dhravya",
+                    "url": "https://dhravya.dev/",
+                    "long_name": "dhravya.dev",
+                    "img": "https://imgs.search.brave.com/LYVd2CLohx0t7vm6fIyAg7pTXK0S6qJkxTJZV4-HHZU/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvM2VkNTdjZjYy/MzNhOWQ2MTE0YTg2/NWYwNjRhZGY3NThi/OTA4NmE5ZDU3Zjhj/MDE0MmJjZTM2OTFh/OTYzNDE3OC9kaHJh/dnlhLmRldi8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "dhravya.dev",
+                    "hostname": "dhravya.dev",
+                    "favicon": "https://imgs.search.brave.com/LYVd2CLohx0t7vm6fIyAg7pTXK0S6qJkxTJZV4-HHZU/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvM2VkNTdjZjYy/MzNhOWQ2MTE0YTg2/NWYwNjRhZGY3NThi/OTA4NmE5ZDU3Zjhj/MDE0MmJjZTM2OTFh/OTYzNDE3OC9kaHJh/dnlhLmRldi8",
+                    "path": ""
+                },
+                "thumbnail": {
+                    "src": "https://imgs.search.brave.com/8_ZRGv0JMZ8gsSPDjrYgLPH-cp-aVzCE1-91US1BmTM/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9kaHJh/dnlhLmRldi9pbWFn/ZXMvcHJvZmlsZS1i/YW5uZXIucG5n",
+                    "original": "https://dhravya.dev/images/profile-banner.png",
+                    "logo": false
+                }
+            },
+            {
+                "title": "Dhravya (Dhravya Shah) · GitHub",
+                "url": "https://github.com/Dhravya",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "18. passionate dev who ships (a lot). 2x acquired founder. I just wanna make products that people love 💖. Working on @supermemoryai - <strong>Dhravya</strong>",
+                "profile": {
+                    "name": "GitHub",
+                    "url": "https://github.com/Dhravya",
+                    "long_name": "github.com",
+                    "img": "https://imgs.search.brave.com/xxsA4YxzaR0cl-DBsH9-lpv2gsif3KMYgM87p26bs_o/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYWQyNWM1NjA5/ZjZmZjNlYzI2MDNk/N2VkNmJhYjE2MzZl/MDY5ZTMxMDUzZmY1/NmU3NWIzNWVmMjk0/NTBjMjJjZi9naXRo/dWIuY29tLw"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "github.com",
+                    "hostname": "github.com",
+                    "favicon": "https://imgs.search.brave.com/xxsA4YxzaR0cl-DBsH9-lpv2gsif3KMYgM87p26bs_o/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYWQyNWM1NjA5/ZjZmZjNlYzI2MDNk/N2VkNmJhYjE2MzZl/MDY5ZTMxMDUzZmY1/NmU3NWIzNWVmMjk0/NTBjMjJjZi9naXRo/dWIuY29tLw",
+                    "path": "› Dhravya"
+                },
+                "thumbnail": {
+                    "src": "https://imgs.search.brave.com/dTdUB7qOLr7ylZ5260cnG6PWmTJd_BkDQRUXB74ItoE/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hdmF0/YXJzLmdpdGh1YnVz/ZXJjb250ZW50LmNv/bS91LzYzOTUwNjM3/P3Y9NA",
+                    "original": "https://avatars.githubusercontent.com/u/63950637?v=4",
+                    "logo": false
+                }
+            },
+            {
+                "title": "Dhravya Shah - Mumbai, Maharashtra, India",
+                "url": "https://www.linkedin.com/in/dhravya-shah-248b381b5/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "1 billion members | Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.",
+                "profile": {
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/dhravya-shah-248b381b5/",
+                    "long_name": "linkedin.com",
+                    "img": "https://imgs.search.brave.com/B3dmoKTAgUkkbrvzAxFg_MfHAm5WmWy0N-4kH1AGWOo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGE1YzZjOWNj/NmNiODQ4NzI0ODg1/MGY5ZGQ2YzhjZTRm/N2NjOGIzZjc1NTlj/NDM2ZGI5Yjk3ZWI1/YzBmNzJmZS93d3cu/bGlua2VkaW4uY29t/Lw"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "linkedin.com",
+                    "hostname": "www.linkedin.com",
+                    "favicon": "https://imgs.search.brave.com/B3dmoKTAgUkkbrvzAxFg_MfHAm5WmWy0N-4kH1AGWOo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGE1YzZjOWNj/NmNiODQ4NzI0ODg1/MGY5ZGQ2YzhjZTRm/N2NjOGIzZjc1NTlj/NDM2ZGI5Yjk3ZWI1/YzBmNzJmZS93d3cu/bGlua2VkaW4uY29t/Lw",
+                    "path": "› in  › dhravya-shah-248b381b5"
+                }
+            },
+            {
+                "title": "Dhravya Shah (@dhravyaplaysmusic) • Instagram photos and ...",
+                "url": "https://www.instagram.com/dhravyaplaysmusic/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "See Instagram photos and videos from <strong>Dhravya</strong> <strong>Shah</strong> (@dhravyaplaysmusic)",
+                "profile": {
+                    "name": "Instagram",
+                    "url": "https://www.instagram.com/dhravyaplaysmusic/",
+                    "long_name": "instagram.com",
+                    "img": "https://imgs.search.brave.com/kgdtgqUZQdNYzMKhbVXC5vthlFLPMJ0IOJAdFjEIRuk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2RiYmJiZDA4/NTBkNWQ0ZmQ3NDE5/OGUxOGI4NzE5ZDI0/Zjk0M2ExMDkzZmJm/ODA0MmJiMzkwZjMy/ZDM4YWVkOS93d3cu/aW5zdGFncmFtLmNv/bS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "instagram.com",
+                    "hostname": "www.instagram.com",
+                    "favicon": "https://imgs.search.brave.com/kgdtgqUZQdNYzMKhbVXC5vthlFLPMJ0IOJAdFjEIRuk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2RiYmJiZDA4/NTBkNWQ0ZmQ3NDE5/OGUxOGI4NzE5ZDI0/Zjk0M2ExMDkzZmJm/ODA0MmJiMzkwZjMy/ZDM4YWVkOS93d3cu/aW5zdGFncmFtLmNv/bS8",
+                    "path": "› dhravyaplaysmusic"
+                }
+            },
+            {
+                "title": "Dhravya Shah",
+                "url": "https://www.youtube.com/channel/UCYJ4Ay7j0Xk8NfgcXaBna5g",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "I make videos about tech sometimes. 17 | Self taught Developer Guitar🎸 Memes🕺🏻 Kinda like music too",
+                "profile": {
+                    "name": "YouTube",
+                    "url": "https://www.youtube.com/channel/UCYJ4Ay7j0Xk8NfgcXaBna5g",
+                    "long_name": "youtube.com",
+                    "img": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "youtube.com",
+                    "hostname": "www.youtube.com",
+                    "favicon": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+                    "path": "  › dhravya shah"
+                },
+                "thumbnail": {
+                    "src": "https://imgs.search.brave.com/4Cvt-1dC2IazFKL7AkLi9NtiF3JBCXsHg_DdZ_lDGSc/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly95dDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL2Fi/bFFsbUdLdEpCQWtj/LURYaWdILU1nTVlY/Zm9jM0NzR0QyRmVa/LXlRc0FBTXhzaWRf/U0lEZWtFcWNvRzFk/c0Q2MmNmMFVXNz1z/OTAwLWMtay1jMHgw/MGZmZmZmZi1uby1y/ag",
+                    "original": "https://yt3.googleusercontent.com/ablQlmGKtJBAkc-DXigH-MgMYXfoc3CsGD2FeZ-yQsAAMxsid_SIDekEqcoG1dsD62cf0UW7=s900-c-k-c0x00ffffff-no-rj",
+                    "logo": false
+                }
+            },
+            {
+                "title": "Buy Dhravya Shah a Coffee. ko-fi.com/dhravya",
+                "url": "https://ko-fi.com/dhravya",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "Become a supporter of <strong>Dhravya</strong> <strong>Shah</strong> today! ❤️ Ko-fi lets you support the creators you love with no fees on donations.",
+                "profile": {
+                    "name": "Ko-fi",
+                    "url": "https://ko-fi.com/dhravya",
+                    "long_name": "ko-fi.com",
+                    "img": "https://imgs.search.brave.com/vlCfqlnsH_efaJX0SrhdlgOddlLjVwYBlqA7W_7r7uY/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOWJmNDk5YTM3/MTNjY2Q3YzNiZjEx/Y2U1MjkwMmFhY2Y5/ZWE4OWEwNjFjNDhk/Yzg3NjdlZjI0MGEx/MzJjOTlkZS9rby1m/aS5jb20v"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "ko-fi.com",
+                    "hostname": "ko-fi.com",
+                    "favicon": "https://imgs.search.brave.com/vlCfqlnsH_efaJX0SrhdlgOddlLjVwYBlqA7W_7r7uY/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOWJmNDk5YTM3/MTNjY2Q3YzNiZjEx/Y2U1MjkwMmFhY2Y5/ZWE4OWEwNjFjNDhk/Yzg3NjdlZjI0MGEx/MzJjOTlkZS9rby1m/aS5jb20v",
+                    "path": "› dhravya"
+                },
+                "thumbnail": {
+                    "src": "https://imgs.search.brave.com/WuvUmOwJbJMYIuZUGfRMJAq9BiVDKN_XL-M7sBxnrqI/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zdG9y/YWdlLmtvLWZpLmNv/bS9jZG4vdXNlcnVw/bG9hZHMvNDJiOTcx/Y2YtYWViNy00ZTEz/LTg3NWQtN2ExYzk2/M2Y5NWQwLnBuZw",
+                    "original": "https://storage.ko-fi.com/cdn/useruploads/42b971cf-aeb7-4e13-875d-7a1c963f95d0.png",
+                    "logo": false
+                }
+            },
+            {
+                "title": "Dhravya Shah",
+                "url": "https://m.facebook.com/dhravya.shah/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "See posts, photos and more on Facebook",
+                "profile": {
+                    "name": "Facebook",
+                    "url": "https://m.facebook.com/dhravya.shah/",
+                    "long_name": "m.facebook.com",
+                    "img": "https://imgs.search.brave.com/0WYs5UG59TQysOa5wSaC2nhsP4lT-DMZ274nRdPj6zg/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMmYzZmY2MTRl/ZDZiZTMxMGIxZjc5/Nzc5MTZjY2RhMWQ0/NjRkMzRiMWJmN2Q5/ZWRmNzk0Y2Y5ZWNh/N2M2NzdjMi9tLmZh/Y2Vib29rLmNvbS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "m.facebook.com",
+                    "hostname": "m.facebook.com",
+                    "favicon": "https://imgs.search.brave.com/0WYs5UG59TQysOa5wSaC2nhsP4lT-DMZ274nRdPj6zg/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMmYzZmY2MTRl/ZDZiZTMxMGIxZjc5/Nzc5MTZjY2RhMWQ0/NjRkMzRiMWJmN2Q5/ZWRmNzk0Y2Y5ZWNh/N2M2NzdjMi9tLmZh/Y2Vib29rLmNvbS8",
+                    "path": "› dhravya.shah"
+                }
+            },
+            {
+                "title": "Dhravya Shah - Student - Arizona State University | LinkedIn",
+                "url": "https://www.linkedin.com/in/dhravyashah/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "I am <strong>Dhravya</strong> <strong>Shah</strong>.&lt;br&gt;&lt;br&gt;A 18-year-old full-stack developer with a passion for building things that people love.&lt;br&gt;&lt;br&gt;I&#x27;ve built robust and scalable web applications, a Twitter bot that serves more than 50 thousand people (has 5M+ impressions) and a discord bot that used to serve more than ...",
+                "profile": {
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/dhravyashah/",
+                    "long_name": "linkedin.com",
+                    "img": "https://imgs.search.brave.com/B3dmoKTAgUkkbrvzAxFg_MfHAm5WmWy0N-4kH1AGWOo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGE1YzZjOWNj/NmNiODQ4NzI0ODg1/MGY5ZGQ2YzhjZTRm/N2NjOGIzZjc1NTlj/NDM2ZGI5Yjk3ZWI1/YzBmNzJmZS93d3cu/bGlua2VkaW4uY29t/Lw"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "linkedin.com",
+                    "hostname": "www.linkedin.com",
+                    "favicon": "https://imgs.search.brave.com/B3dmoKTAgUkkbrvzAxFg_MfHAm5WmWy0N-4kH1AGWOo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGE1YzZjOWNj/NmNiODQ4NzI0ODg1/MGY5ZGQ2YzhjZTRm/N2NjOGIzZjc1NTlj/NDM2ZGI5Yjk3ZWI1/YzBmNzJmZS93d3cu/bGlua2VkaW4uY29t/Lw",
+                    "path": "› in  › dhravyashah"
+                },
+                "thumbnail": {
+                    "src": "https://imgs.search.brave.com/U6g8P7vEuI9tlPF0jNZ82nTvo2WhJaBW9u5yQ_DrQYQ/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0Q0/RDAzQVFGYlRsZlBG/ZmhsVncvcHJvZmls/ZS1kaXNwbGF5cGhv/dG8tc2hyaW5rXzIw/MF8yMDAvMC8xNjg2/MTIxMzYzNzg5P2U9/MjE0NzQ4MzY0NyZh/bXA7dj1iZXRhJmFt/cDt0PW5GTjR5SXZi/bDlYX3puRHY1SWJR/cFdRcE1rODZQY2lp/a1ZNX2paMTJiX3c",
+                    "original": "https://media.licdn.com/dms/image/D4D03AQFbTlfPFfhlVw/profile-displayphoto-shrink_200_200/0/1686121363789?e=2147483647&amp;v=beta&amp;t=nFN4yIvbl9X_znDv5IbQpWQpMk86PciikVM_jZ12b_w",
+                    "logo": false
+                }
+            },
+            {
+                "title": "Dhravya Shah (the DEV guy) (@dhravya.dev) • Instagram photos and videos",
+                "url": "https://www.instagram.com/dhravya.dev/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "24K Followers, 4 Following, 51 Posts - See Instagram photos and videos from <strong>Dhravya</strong> <strong>Shah</strong> (the DEV guy) (@<strong>dhravya</strong>.dev)",
+                "profile": {
+                    "name": "Instagram",
+                    "url": "https://www.instagram.com/dhravya.dev/",
+                    "long_name": "instagram.com",
+                    "img": "https://imgs.search.brave.com/kgdtgqUZQdNYzMKhbVXC5vthlFLPMJ0IOJAdFjEIRuk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2RiYmJiZDA4/NTBkNWQ0ZmQ3NDE5/OGUxOGI4NzE5ZDI0/Zjk0M2ExMDkzZmJm/ODA0MmJiMzkwZjMy/ZDM4YWVkOS93d3cu/aW5zdGFncmFtLmNv/bS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "instagram.com",
+                    "hostname": "www.instagram.com",
+                    "favicon": "https://imgs.search.brave.com/kgdtgqUZQdNYzMKhbVXC5vthlFLPMJ0IOJAdFjEIRuk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2RiYmJiZDA4/NTBkNWQ0ZmQ3NDE5/OGUxOGI4NzE5ZDI0/Zjk0M2ExMDkzZmJm/ODA0MmJiMzkwZjMy/ZDM4YWVkOS93d3cu/aW5zdGFncmFtLmNv/bS8",
+                    "path": "› dhravya.dev"
+                },
+                "thumbnail": {
+                    "src": "https://imgs.search.brave.com/fSMJSebwHGz3IvvabPeieMBZpqPJ4B_h9zNOP-_SSi8/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zY29u/dGVudC1kZnc1LTIu/Y2RuaW5zdGFncmFt/LmNvbS92L3Q1MS4y/ODg1LTE5LzQxNjc1/Mzc4MF82NzgzODU0/NTc3ODMyMjdfNDkx/Nzg3NzI0OTE3NzA0/NTMzNF9uLmpwZz9z/dHA9ZHN0LWpwZ19z/MTAweDEwMCZhbXA7/X25jX2NhdD0xMDQm/YW1wO2NjYj0xLTcm/YW1wO19uY19zaWQ9/M2ZkMDZmJmFtcDtf/bmNfb2hjPWFpQXFM/enpuR01nUTdrTnZn/Rmx4OUEyJmFtcDtf/bmNfaHQ9c2NvbnRl/bnQtZGZ3NS0yLmNk/bmluc3RhZ3JhbS5j/b20mYW1wO29oPTAw/X0FZQ2pXSC1MR3E5/MnliempjMHJNTHpU/aVNHdklSRG9LRlNG/cVI2QV8wV2hNZ2cm/YW1wO29lPTY2NTc5/NEY5",
+                    "original": "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-19/416753780_678385457783227_4917877249177045334_n.jpg?stp=dst-jpg_s100x100&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=3fd06f&amp;_nc_ohc=aiAqLzznGMgQ7kNvgFlx9A2&amp;_nc_ht=scontent-dfw5-2.cdninstagram.com&amp;oh=00_AYCjWH-LGq92ybzjc0rMLzTiSGvIRDoKFSFqR6A_0WhMgg&amp;oe=665794F9",
+                    "logo": false
+                }
+            },
+            {
+                "title": "About - dhravya",
+                "url": "https://dhravya.dev/about",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "Developer, 2x acquired Founder, Content Creator, Indie Hacker, OSS Contributor, Guitarist and Student. I play read, write and travel for fun.",
+                "profile": {
+                    "name": "Dhravya",
+                    "url": "https://dhravya.dev/about",
+                    "long_name": "dhravya.dev",
+                    "img": "https://imgs.search.brave.com/LYVd2CLohx0t7vm6fIyAg7pTXK0S6qJkxTJZV4-HHZU/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvM2VkNTdjZjYy/MzNhOWQ2MTE0YTg2/NWYwNjRhZGY3NThi/OTA4NmE5ZDU3Zjhj/MDE0MmJjZTM2OTFh/OTYzNDE3OC9kaHJh/dnlhLmRldi8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "dhravya.dev",
+                    "hostname": "dhravya.dev",
+                    "favicon": "https://imgs.search.brave.com/LYVd2CLohx0t7vm6fIyAg7pTXK0S6qJkxTJZV4-HHZU/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvM2VkNTdjZjYy/MzNhOWQ2MTE0YTg2/NWYwNjRhZGY3NThi/OTA4NmE5ZDU3Zjhj/MDE0MmJjZTM2OTFh/OTYzNDE3OC9kaHJh/dnlhLmRldi8",
+                    "path": "› about"
+                }
+            },
+            {
+                "title": "Highlights by Dhravya Shah (@DhravyaShah) ...",
+                "url": "https://twitter.com/DhravyaShah/highlights",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "Highlights by <strong>Dhravya</strong> <strong>Shah</strong> (@DhravyaShah) ...",
+                "profile": {
+                    "name": "Twitter",
+                    "url": "https://twitter.com/DhravyaShah/highlights",
+                    "long_name": "twitter.com",
+                    "img": "https://imgs.search.brave.com/wWeP6Pa-JGi7cDBqMPkc4Ckai-nUQl4uFSKrw0evyx4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "twitter.com",
+                    "hostname": "twitter.com",
+                    "favicon": "https://imgs.search.brave.com/wWeP6Pa-JGi7cDBqMPkc4Ckai-nUQl4uFSKrw0evyx4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8",
+                    "path": "› DhravyaShah  › highlights"
+                }
+            },
+            {
+                "title": "This new AI tool is mind blowing 🤯🤯 d",
+                "url": "https://www.instagram.com/reel/C7bvekKAifd/",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "We cannot provide a description for this page right now",
+                "profile": {
+                    "name": "Instagram",
+                    "url": "https://www.instagram.com/reel/C7bvekKAifd/",
+                    "long_name": "instagram.com",
+                    "img": "https://imgs.search.brave.com/kgdtgqUZQdNYzMKhbVXC5vthlFLPMJ0IOJAdFjEIRuk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2RiYmJiZDA4/NTBkNWQ0ZmQ3NDE5/OGUxOGI4NzE5ZDI0/Zjk0M2ExMDkzZmJm/ODA0MmJiMzkwZjMy/ZDM4YWVkOS93d3cu/aW5zdGFncmFtLmNv/bS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "instagram.com",
+                    "hostname": "www.instagram.com",
+                    "favicon": "https://imgs.search.brave.com/kgdtgqUZQdNYzMKhbVXC5vthlFLPMJ0IOJAdFjEIRuk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2RiYmJiZDA4/NTBkNWQ0ZmQ3NDE5/OGUxOGI4NzE5ZDI0/Zjk0M2ExMDkzZmJm/ODA0MmJiMzkwZjMy/ZDM4YWVkOS93d3cu/aW5zdGFncmFtLmNv/bS8",
+                    "path": "› reel  › C7bvekKAifd"
+                }
+            },
+            {
+                "title": "How I learnt to code, sold my project and moved to USA",
+                "url": "https://twitter.com/DhravyaShah/status/1761143495849394678",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "How I learnt to code, sold my project and moved to USA",
+                "profile": {
+                    "name": "X",
+                    "url": "https://twitter.com/DhravyaShah/status/1761143495849394678",
+                    "long_name": "twitter.com",
+                    "img": "https://imgs.search.brave.com/wWeP6Pa-JGi7cDBqMPkc4Ckai-nUQl4uFSKrw0evyx4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "twitter.com",
+                    "hostname": "twitter.com",
+                    "favicon": "https://imgs.search.brave.com/wWeP6Pa-JGi7cDBqMPkc4Ckai-nUQl4uFSKrw0evyx4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8",
+                    "path": "› DhravyaShah  › status  › 1761143495849394678"
+                }
+            },
+            {
+                "title": "Dhravya Shah | ASU Search",
+                "url": "https://search.asu.edu/profile/4767534",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "<strong>Dhravya</strong> <strong>Shah</strong> · Undergraduate Student · <strong>dhravya</strong>@asu.edu · Student Information · Undergraduate Student Computer Science Ira A Fulton Engineering",
+                "profile": {
+                    "name": "Asu",
+                    "url": "https://search.asu.edu/profile/4767534",
+                    "long_name": "search.asu.edu",
+                    "img": "https://imgs.search.brave.com/7rM4emY6__UtMMdEbmvv14dFW4rVaCdyZ18_Azvhkko/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMThhMGI4ZWNm/MTJkMjMzODk3MWNk/ZDNiZDhkNGI3MzYw/YmVkZjg3ODJjYTQx/NDc2ZmEzMjcwNzlm/ZDNjZDFhNS9zZWFy/Y2guYXN1LmVkdS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "search.asu.edu",
+                    "hostname": "search.asu.edu",
+                    "favicon": "https://imgs.search.brave.com/7rM4emY6__UtMMdEbmvv14dFW4rVaCdyZ18_Azvhkko/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMThhMGI4ZWNm/MTJkMjMzODk3MWNk/ZDNiZDhkNGI3MzYw/YmVkZjg3ODJjYTQx/NDc2ZmEzMjcwNzlm/ZDNjZDFhNS9zZWFy/Y2guYXN1LmVkdS8",
+                    "path": "› profile  › 4767534"
+                }
+            },
+            {
+                "title": "Dhravya Shah on LinkedIn: We won Hackprinceton! with Dhanush Vardhan",
+                "url": "https://www.linkedin.com/posts/dhravyashah_we-won-hackprinceton-with-dhanush-vardhan-activity-7133132038592741377-BzoJ?trk=public_profile_like_view",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "Agree &amp; Join LinkedIn · By clicking Continue, you agree to LinkedIn’s User Agreement, Privacy Policy, and Cookie Policy",
+                "page_age": "2023-11-22T16:40:05",
+                "profile": {
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/posts/dhravyashah_we-won-hackprinceton-with-dhanush-vardhan-activity-7133132038592741377-BzoJ?trk=public_profile_like_view",
+                    "long_name": "linkedin.com",
+                    "img": "https://imgs.search.brave.com/B3dmoKTAgUkkbrvzAxFg_MfHAm5WmWy0N-4kH1AGWOo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGE1YzZjOWNj/NmNiODQ4NzI0ODg1/MGY5ZGQ2YzhjZTRm/N2NjOGIzZjc1NTlj/NDM2ZGI5Yjk3ZWI1/YzBmNzJmZS93d3cu/bGlua2VkaW4uY29t/Lw"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "article",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "linkedin.com",
+                    "hostname": "www.linkedin.com",
+                    "favicon": "https://imgs.search.brave.com/B3dmoKTAgUkkbrvzAxFg_MfHAm5WmWy0N-4kH1AGWOo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGE1YzZjOWNj/NmNiODQ4NzI0ODg1/MGY5ZGQ2YzhjZTRm/N2NjOGIzZjc1NTlj/NDM2ZGI5Yjk3ZWI1/YzBmNzJmZS93d3cu/bGlua2VkaW4uY29t/Lw",
+                    "path": "› posts  › dhravyashah_we-won-hackprinceton-with-dhanush-vardhan-activity-7133132038592741377-BzoJ"
+                },
+                "thumbnail": {
+                    "src": "https://imgs.search.brave.com/XsxO6ec6rbjUA1zGJNXEn-fEMbbSga0cfcYT_UJ10gQ/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0Q1/NjA1QVFGbjdvVUot/NlNrVkEvdmlkZW9j/b3Zlci1oaWdoLzAv/MTcwMDY3MTIwNDEz/Mz9lPTIxNDc0ODM2/NDcmdj1iZXRhJnQ9/cTV1aEJLRERPSC1W/TUpWbnFIQVluWlVM/UzVwMHVEbXlZSFYz/WlNyWnk5VQ",
+                    "original": "https://media.licdn.com/dms/image/D5605AQFn7oUJ-6SkVA/videocover-high/0/1700671204133?e=2147483647&v=beta&t=q5uhBKDDOH-VMJVnqHAYnZULS5p0uDmyYHV3ZSrZy9U",
+                    "logo": false
+                },
+                "age": "November 22, 2023"
+            },
+            {
+                "title": "Dhravya Shah's profile on Product Hunt | Product Hunt",
+                "url": "https://www.producthunt.com/@dhravya",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "See what kind of products <strong>Dhravya</strong> <strong>Shah</strong> (17 yo, Products that people love 💖 ) likes on Product Hunt",
+                "profile": {
+                    "name": "Product Hunt",
+                    "url": "https://www.producthunt.com/@dhravya",
+                    "long_name": "producthunt.com",
+                    "img": "https://imgs.search.brave.com/UifgqgTwE7T7rbTaRY5hElaWX2Ovq39AAj4REa5_bLQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMmJkNmE1MDMx/NTcwYjVhN2Q4Yzg2/NDc1N2E4ZGY2NTU1/OTBmYTIyYjA2ZmVl/YTVkZmRmNTk3NjIz/NTZmZmY3YS93d3cu/cHJvZHVjdGh1bnQu/Y29tLw"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "producthunt.com",
+                    "hostname": "www.producthunt.com",
+                    "favicon": "https://imgs.search.brave.com/UifgqgTwE7T7rbTaRY5hElaWX2Ovq39AAj4REa5_bLQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMmJkNmE1MDMx/NTcwYjVhN2Q4Yzg2/NDc1N2E4ZGY2NTU1/OTBmYTIyYjA2ZmVl/YTVkZmRmNTk3NjIz/NTZmZmY3YS93d3cu/cHJvZHVjdGh1bnQu/Y29tLw",
+                    "path": "› @dhravya"
+                },
+                "thumbnail": {
+                    "src": "https://imgs.search.brave.com/HGA5pCejnvJNOUPLvRWvPy0Qsg5s5-csL-trXZTc7CY/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hcGku/dXJsMnBuZy5jb20v/djYvUDUzMjlDMUZB/MEVDQjYvMTZkYjBk/YzAwMDc3ZWU5MTYw/ZmU5ZGY1NTYxNjg3/NzUvcG5nLz9zYXlf/Y2hlZXNlPXRydWUm/YW1wO3R0bD0zMTUz/NjAwMCZhbXA7dW5p/cXVlPWZkMTYzZGQ3/NTlkZWI1MWUwNjFh/MmVmOWY5NTE5ZTY0/JmFtcDt1cmw9aHR0/cHMlM0ElMkYlMkZw/cm9kdWN0aHVudC5j/b20lMkZzaGFyZWFi/bGVfaW1hZ2UlMkZ1/c2VyJTJGNDIwODQ1/MyZhbXA7dmlld3Bv/cnQ9NTQweDI3MA",
+                    "original": "https://api.url2png.com/v6/P5329C1FA0ECB6/16db0dc00077ee9160fe9df556168775/png/?say_cheese=true&amp;ttl=31536000&amp;unique=fd163dd759deb51e061a2ef9f9519e64&amp;url=https%3A%2F%2Fproducthunt.com%2Fshareable_image%2Fuser%2F4208453&amp;viewport=540x270",
+                    "logo": false
+                }
+            },
+            {
+                "title": "TikTok - Make Your Day",
+                "url": "https://www.tiktok.com/tag/dhashah",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "We cannot provide a description for this page right now",
+                "profile": {
+                    "name": "TikTok",
+                    "url": "https://www.tiktok.com/tag/dhashah",
+                    "long_name": "tiktok.com",
+                    "img": "https://imgs.search.brave.com/bbk0PGWgTH-0aeiLkZm-qGBkpMRb1NbsNLTOsC3kPiQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYzc2YmU5MjFh/Y2U1ODE5MDE4Yjdm/ZmViNDMwNmZhMDVm/ZjE4ZjQ0MWI5YjVl/NDI4ZTExZGY4ZWFj/OGM1M2ZkOC93d3cu/dGlrdG9rLmNvbS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "tiktok.com",
+                    "hostname": "www.tiktok.com",
+                    "favicon": "https://imgs.search.brave.com/bbk0PGWgTH-0aeiLkZm-qGBkpMRb1NbsNLTOsC3kPiQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYzc2YmU5MjFh/Y2U1ODE5MDE4Yjdm/ZmViNDMwNmZhMDVm/ZjE4ZjQ0MWI5YjVl/NDI4ZTExZGY4ZWFj/OGM1M2ZkOC93d3cu/dGlrdG9rLmNvbS8",
+                    "path": "› tag  › dhashah"
+                }
+            },
+            {
+                "title": "India in Rajje anna fathuruverin ge adhadhu 42% ... - X.com",
+                "url": "https://twitter.com/Dhaurunews/status/1787405930742575275",
+                "is_source_local": false,
+                "is_source_both": false,
+                "description": "India in Rajje anna fathuruverin ge adhadhu 42% ... - X.com",
+                "profile": {
+                    "name": "Twitter",
+                    "url": "https://twitter.com/Dhaurunews/status/1787405930742575275",
+                    "long_name": "twitter.com",
+                    "img": "https://imgs.search.brave.com/wWeP6Pa-JGi7cDBqMPkc4Ckai-nUQl4uFSKrw0evyx4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8"
+                },
+                "language": "en",
+                "family_friendly": true,
+                "type": "search_result",
+                "subtype": "generic",
+                "meta_url": {
+                    "scheme": "https",
+                    "netloc": "twitter.com",
+                    "hostname": "twitter.com",
+                    "favicon": "https://imgs.search.brave.com/wWeP6Pa-JGi7cDBqMPkc4Ckai-nUQl4uFSKrw0evyx4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8",
+                    "path": "› Dhaurunews  › status  › 1787405930742575275"
+                }
+            }
+        ],
+        "family_friendly": true
+    }
+}
