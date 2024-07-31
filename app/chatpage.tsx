@@ -95,10 +95,10 @@ function ChatPage({ user }: { user: Session | null }) {
                   <CredenzaBody>
                     <ul className="list-disc max-h-96 overflow-y-auto flex flex-col gap-2">
                       {userMemories.length === 0 && (
-                        <>
+                        <li>
                           Nothing here... Yet! Just start browsing and asking
                           questions. I'll remember it.
-                        </>
+                        </li>
                       )}
                       {userMemories.map((memory) => (
                         <li className="text-sm border rounded-md p-2 flex gap-2 justify-between">
