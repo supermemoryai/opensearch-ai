@@ -8,7 +8,7 @@ import mem0Logo from './assets/logo.png';
 import { Session } from 'next-auth';
 import { signIn } from 'next-auth/react';
 import {
-    createCustomMemory,
+  createCustomMemory,
   deleteMemory,
   getMem0Memories,
   getSearchResultsFromMemory,
@@ -70,87 +70,92 @@ function ChatPage({ user }: { user: Session | null }) {
               </svg>
             </a>
 
-            <Credenza>
-              <CredenzaTrigger asChild>
-                <button
-                  onClick={async () => {
-                    const mems = await getMem0Memories(user);
-                    setUserMemories(mems ?? []);
-                  }}
-                  className="p-4"
-                >
-                  Saved memories
-                </button>
-              </CredenzaTrigger>
-              <CredenzaContent>
-                <CredenzaHeader>
-                  <CredenzaTitle className="text-lg font-bold">
-                    Your Memories
-                  </CredenzaTitle>
-                  <CredenzaDescription>
-                    Information automatically collected about you by mem0.ai
-                  </CredenzaDescription>
-                </CredenzaHeader>
-                <CredenzaBody>
-                  <ul className="list-disc max-h-96 overflow-y-auto flex flex-col gap-2">
-                    {userMemories.length === 0 && (
-                      <>
-                        Nothing here... Yet! Just start browsing and asking
-                        questions. I'll remember it.
-                      </>
-                    )}
-                    {userMemories.map((memory) => (
-                      <li className="text-sm border rounded-md p-2 flex gap-2 justify-between">
-                        <span>{memory.memory}</span>
-                        <button
-                          onClick={async () => deleteMemory(memory.id, user)}
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="size-5"
+            {user?.user && (
+              <Credenza>
+                <CredenzaTrigger asChild>
+                  <button
+                    onClick={async () => {
+                      const mems = await getMem0Memories(user);
+                      setUserMemories(mems ?? []);
+                    }}
+                    className="p-4"
+                  >
+                    Saved memories
+                  </button>
+                </CredenzaTrigger>
+                <CredenzaContent>
+                  <CredenzaHeader>
+                    <CredenzaTitle className="text-lg font-bold">
+                      Your Memories
+                    </CredenzaTitle>
+                    <CredenzaDescription>
+                      Information automatically collected about you by mem0.ai
+                    </CredenzaDescription>
+                  </CredenzaHeader>
+                  <CredenzaBody>
+                    <ul className="list-disc max-h-96 overflow-y-auto flex flex-col gap-2">
+                      {userMemories.length === 0 && (
+                        <>
+                          Nothing here... Yet! Just start browsing and asking
+                          questions. I'll remember it.
+                        </>
+                      )}
+                      {userMemories.map((memory) => (
+                        <li className="text-sm border rounded-md p-2 flex gap-2 justify-between">
+                          <span>{memory.memory}</span>
+                          <button
+                            onClick={async () => deleteMemory(memory.id, user)}
                           >
-                            <path
-                              fillRule="evenodd"
-                              d="M8.75 1A2.75 2.75 0 0 0 6 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 1 0 .23 1.482l.149-.022.841 10.518A2.75 2.75 0 0 0 7.596 19h4.807a2.75 2.75 0 0 0 2.742-2.53l.841-10.52.149.023a.75.75 0 0 0 .23-1.482A41.03 41.03 0 0 0 14 4.193V3.75A2.75 2.75 0 0 0 11.25 1h-2.5ZM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4ZM8.58 7.72a.75.75 0 0 0-1.5.06l.3 7.5a.75.75 0 1 0 1.5-.06l-.3-7.5Zm4.34.06a.75.75 0 1 0-1.5-.06l-.3 7.5a.75.75 0 1 0 1.5.06l.3-7.5Z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </button>
-                      </li>
-                    ))}
-                    <form
-                      onSubmit={async () => {
-                        if (!customUserMemory) return;
-                        const memory = await createCustomMemory(customUserMemory, user)
-                        // @ts-ignore
-                        setUserMemories([...userMemories, memory]);
-                      }}
-                      className="flex justify-between items-center gap-2"
-                    >
-                      <input
-                        value={customUserMemory ?? ""}
-                        onChange={(e) => setCustomUserMemory(e.target.value)}
-                        className="rounded-md border p-2 w-full"
-                        placeholder="Type something here to add it to memory"
-                      />
-                      <button
-                        className="p-2 rounded-md bg-black text-white"
-                        type="submit"
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              className="size-5"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M8.75 1A2.75 2.75 0 0 0 6 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 1 0 .23 1.482l.149-.022.841 10.518A2.75 2.75 0 0 0 7.596 19h4.807a2.75 2.75 0 0 0 2.742-2.53l.841-10.52.149.023a.75.75 0 0 0 .23-1.482A41.03 41.03 0 0 0 14 4.193V3.75A2.75 2.75 0 0 0 11.25 1h-2.5ZM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4ZM8.58 7.72a.75.75 0 0 0-1.5.06l.3 7.5a.75.75 0 1 0 1.5-.06l-.3-7.5Zm4.34.06a.75.75 0 1 0-1.5-.06l-.3 7.5a.75.75 0 1 0 1.5.06l.3-7.5Z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </button>
+                        </li>
+                      ))}
+                      <form
+                        onSubmit={async () => {
+                          if (!customUserMemory) return;
+                          const memory = await createCustomMemory(
+                            customUserMemory,
+                            user
+                          );
+                          // @ts-ignore
+                          setUserMemories([...userMemories, memory]);
+                        }}
+                        className="flex justify-between items-center gap-2"
                       >
-                        Add
-                      </button>
-                    </form>
-                  </ul>
-                </CredenzaBody>
-                <CredenzaFooter>
-                  <CredenzaClose asChild>
-                    <button>Close</button>
-                  </CredenzaClose>
-                </CredenzaFooter>
-              </CredenzaContent>
-            </Credenza>
+                        <input
+                          value={customUserMemory ?? ''}
+                          onChange={(e) => setCustomUserMemory(e.target.value)}
+                          className="rounded-md border p-2 w-full"
+                          placeholder="Type something here to add it to memory"
+                        />
+                        <button
+                          className="p-2 rounded-md bg-black text-white"
+                          type="submit"
+                        >
+                          Add
+                        </button>
+                      </form>
+                    </ul>
+                  </CredenzaBody>
+                  <CredenzaFooter>
+                    <CredenzaClose asChild>
+                      <button>Close</button>
+                    </CredenzaClose>
+                  </CredenzaFooter>
+                </CredenzaContent>
+              </Credenza>
+            )}
           </div>
 
           {searchResultsData && (
@@ -325,6 +330,25 @@ function ChatPage({ user }: { user: Session | null }) {
                   cols={2}
                   placeholder="What are you looking for?"
                   className="rounded-xl font-sans max-w-xl w-full border border-blue-500/50 p-4 bg-white bg-opacity-30 backdrop-blur-xl min-h-20"
+                  //   keydown listener to submit form on enter
+                  onKeyDown={async (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      const data = await getSearchResultsFromMemory(
+                        input,
+                        user
+                      );
+                      if (!data) return;
+                      setSearchResultsData(data);
+                      await handleSubmit(e, {
+                        body: {
+                          data,
+                          input,
+                        },
+                      });
+                    }
+                  }}
                 />
 
                 <button
