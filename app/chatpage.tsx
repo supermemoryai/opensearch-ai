@@ -1,4 +1,5 @@
-"use client";
+/* eslint-disable @next/next/no-img-element */
+'use client';
 
 import React, { useEffect, useRef, useState } from "react";
 import Blobs from "./Blobs";
@@ -151,7 +152,7 @@ function ChatPage({ user }: { user: Session | null }) {
                       {userMemories.length === 0 && (
                         <li>
                           Nothing here... Yet! Just start browsing and asking
-                          questions. I'll remember it.
+                          questions. I&apos;ll remember it.
                         </li>
                       )}
                       {userMemories.map((memory) => (
@@ -268,6 +269,7 @@ function ChatPage({ user }: { user: Session | null }) {
                     <img
                       src={user?.user?.image ?? "/user-placeholder.svg"}
                       className="rounded-full w-10 h-10 border-2 border-primary-foreground"
+                      alt="User profile picture"
                     />
                     <span>{message.content}</span>
                   </div>
@@ -319,7 +321,7 @@ function ChatPage({ user }: { user: Session | null }) {
                       <div className="flex gap-4 overflow-x-auto mt-4">
                         {searchResultsData?.web.results
                           .slice(0, 6)
-                          .map((item) => {
+                          .map((item, key) => {
                             const src = item.thumbnail?.src;
 
                             if (!src) return null;
@@ -330,6 +332,7 @@ function ChatPage({ user }: { user: Session | null }) {
                                 src={src}
                                 alt={item.description}
                                 className="w-24 h-24 object-cover rounded"
+                                key={key}
                               />
                             );
                           })}
@@ -338,6 +341,7 @@ function ChatPage({ user }: { user: Session | null }) {
                             <img
                               src="/placeholder.svg"
                               className="w-full h-full object-cover rounded"
+                              alt="placeholder"
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
                               <span className="text-white text-xl font-bold">
@@ -405,10 +409,16 @@ function ChatPage({ user }: { user: Session | null }) {
               </form>
             ) : (
               <button
-                onClick={() => signIn("google")}
-                className="p-4 rounded-md bg-black text-white"
+                onClick={() => signIn('google')}
+                className="px-4 py-2 rounded-full bg-black text-white flex gap-2 justify-between items-center"
               >
-                Sign in with Google
+                <img
+                  src={'./google.png'}
+                  width={20}
+                  height={20}
+                  alt="google logo"
+                />
+                <p className="text-center mt-1">Sign in with Google</p>
               </button>
             )}
           </div>
