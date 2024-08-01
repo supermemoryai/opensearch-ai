@@ -36,7 +36,7 @@ export const POST = async (request: Request): Promise<Response> => {
     console.log(await mem0Response.text());
     return new Response('Error fetching memories', { status: 500 });
   }
-  
+
   const memories = (await mem0Response.json()) as { memory: string }[];
 
   console.log(memories);
