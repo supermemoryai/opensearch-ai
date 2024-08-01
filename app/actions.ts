@@ -10,6 +10,23 @@ export const getSearchResultsFromMemory = async (
 ): Promise<BingResults | null> => {
   if (!query || !user?.user) return null;
 
+  await fetch('https://api.mem0.ai/v1/memories/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Token ${process.env.MEM0_API_KEY}`,
+    },
+    body: JSON.stringify({
+      messages: [
+        {
+          role: 'user',
+          content: query,
+        },
+      ],
+      user_id: user?.user?.email,
+    }),
+  });
+
   const response = await fetch(
     'https://api.search.brave.com/res/v1/web/search?q=' +
       encodeURIComponent(query),
