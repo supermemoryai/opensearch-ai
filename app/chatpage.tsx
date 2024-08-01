@@ -148,11 +148,6 @@ function ChatPage({ user }: { user: Session | null }) {
                       </form>
                     </ul>
                   </CredenzaBody>
-                  <CredenzaFooter>
-                    <CredenzaClose asChild>
-                      <button>Close</button>
-                    </CredenzaClose>
-                  </CredenzaFooter>
                 </CredenzaContent>
               </Credenza>
             )}
