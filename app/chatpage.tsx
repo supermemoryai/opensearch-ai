@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import Blobs from './Blobs';
 import Globe from './Globe';
 import Image from 'next/image';
@@ -38,6 +38,32 @@ function ChatPage({ user }: { user: Session | null }) {
   const [userMemories, setUserMemories] = useState<
     { memory: string; id: string }[]
   >([]);
+
+  // Handling Memory Submit
+  const handleMemorySubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!customUserMemory) return;
+    try {
+      const memory = await createCustomMemory(customUserMemory, user);
+      // @ts-ignore
+      setUserMemories([...userMemories, memory]);
+    } catch (error) {
+      console.error('Error creating memory:', error);
+    }
+  };
+
+  // Handling Search Form
+  const handleSearchSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      const data = await getSearchResultsFromMemory(input, user);
+      if (!data) return;
+      setSearchResultsData(data);
+      await handleSubmit(e, { body: { data, input } });
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+    }
+  };
 
   return (
     <div className="relative h-screen">
@@ -122,15 +148,7 @@ function ChatPage({ user }: { user: Session | null }) {
                         </li>
                       ))}
                       <form
-                        onSubmit={async () => {
-                          if (!customUserMemory) return;
-                          const memory = await createCustomMemory(
-                            customUserMemory,
-                            user
-                          );
-                          // @ts-ignore
-                          setUserMemories([...userMemories, memory]);
-                        }}
+                        onSubmit={handleMemorySubmit}
                         className="flex justify-between items-center gap-2"
                       >
                         <input
@@ -309,18 +327,7 @@ function ChatPage({ user }: { user: Session | null }) {
 
             {user && user.user ? (
               <form
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  const data = await getSearchResultsFromMemory(input, user);
-                  if (!data) return;
-                  setSearchResultsData(data);
-                  await handleSubmit(e, {
-                    body: {
-                      data,
-                      input,
-                    },
-                  });
-                }}
+                onSubmit={handleSearchSubmit}
                 className="flex relative gap-2 max-w-xl w-full"
               >
                 <textarea
