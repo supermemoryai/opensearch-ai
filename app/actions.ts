@@ -10,29 +10,6 @@ export const getSearchResultsFromMemory = async (
 ): Promise<BingResults | null> => {
   if (!query || !user?.user) return null;
 
-  console.log("User's query: ", query, user);
-
-  const mem0Response = fetch('https://api.mem0.ai/v1/memories/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Token ${process.env.MEM0_API_KEY}`,
-    },
-    body: JSON.stringify({
-      messages: [
-        {
-          role: 'user',
-          content: query,
-        },
-      ],
-      user_id: user?.user?.email,
-    }),
-  });
-
-  //   const mem0Data = await mem0Response.json();
-
-  //   console.log(mem0Data);
-
   const response = await fetch(
     'https://api.search.brave.com/res/v1/web/search?q=' +
       encodeURIComponent(query),
@@ -47,8 +24,6 @@ export const getSearchResultsFromMemory = async (
     }
   );
   const data = (await response.json()) as BingResults;
-
-  console.log(data);
 
   return data;
 };
@@ -141,6 +116,6 @@ export const createCustomMemory = async (
   const json = await mem0Response.json();
 
   console.log(json)
-  
+
   return json;
 };
