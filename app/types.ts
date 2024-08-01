@@ -77,3 +77,8 @@ export interface Thumbnail {
   original: string;
   logo: boolean;
 }
+
+export interface Memory {
+  id: string;
+  memory: string;
+}
