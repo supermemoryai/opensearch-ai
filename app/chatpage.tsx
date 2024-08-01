@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import React, { useState } from 'react';
@@ -97,11 +98,14 @@ function ChatPage({ user }: { user: Session | null }) {
                       {userMemories.length === 0 && (
                         <li>
                           Nothing here... Yet! Just start browsing and asking
-                          questions. I'll remember it.
+                          questions. I&apos;ll remember it.
                         </li>
                       )}
-                      {userMemories.map((memory) => (
-                        <li className="text-sm border rounded-md p-2 flex gap-2 justify-between">
+                      {userMemories.map((memory, index) => (
+                        <li
+                          className="text-sm border rounded-md p-2 flex gap-2 justify-between"
+                          key={index}
+                        >
                           <span>{memory.memory}</span>
                           <button
                             onClick={async () => deleteMemory(memory.id, user)}
@@ -209,13 +213,14 @@ function ChatPage({ user }: { user: Session | null }) {
 
         {searchResultsData ? (
           <div className="flex flex-col gap-4 items-start max-w-3xl w-full mt-32 md:mt-8">
-            {messages.map((message) => (
-              <div className="w-full max-w-3xl flex flex-col gap-2">
+            {messages.map((message, index) => (
+              <div className="w-full max-w-3xl flex flex-col gap-2" key={index}>
                 {message.role === 'user' ? (
                   <div className="flex gap-4 font-bold text-2xl">
                     <img
                       src={user?.user?.image ?? '/user-placeholder.svg'}
                       className="rounded-full w-10 h-10 border-2 border-primary-foreground"
+                      alt="User profile picture"
                     />
                     <span>{message.content}</span>
                   </div>
@@ -225,8 +230,11 @@ function ChatPage({ user }: { user: Session | null }) {
                       <div className="flex flex-row gap-4 overflow-x-auto mt-4">
                         {searchResultsData?.web.results
                           .slice(0, 6)
-                          .map((item) => (
-                            <div className="bg-white border border-neutral-400 backdrop-blur-md rounded-xl bg-opacity-30 w-96 flex flex-col gap-4 p-2">
+                          .map((item, index) => (
+                            <div
+                              className="bg-white border border-neutral-400 backdrop-blur-md rounded-xl bg-opacity-30 w-96 flex flex-col gap-4 p-2"
+                              key={index}
+                            >
                               <a
                                 href={item.url}
                                 target="_blank"
@@ -267,7 +275,7 @@ function ChatPage({ user }: { user: Session | null }) {
                       <div className="flex gap-4 overflow-x-auto mt-4">
                         {searchResultsData?.web.results
                           .slice(0, 6)
-                          .map((item) => {
+                          .map((item, key) => {
                             const src = item.thumbnail?.src;
 
                             if (!src) return null;
@@ -277,6 +285,7 @@ function ChatPage({ user }: { user: Session | null }) {
                                 src={src}
                                 alt={item.description}
                                 className="w-24 h-24 object-cover rounded"
+                                key={key}
                               />
                             );
                           })}
@@ -285,6 +294,7 @@ function ChatPage({ user }: { user: Session | null }) {
                             <img
                               src="/placeholder.svg"
                               className="w-full h-full object-cover rounded"
+                              alt="placeholder"
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
                               <span className="text-white text-xl font-bold">
@@ -374,9 +384,15 @@ function ChatPage({ user }: { user: Session | null }) {
             ) : (
               <button
                 onClick={() => signIn('google')}
-                className="p-4 rounded-md bg-black text-white"
+                className="px-4 py-2 rounded-full bg-black text-white flex gap-2 justify-between items-center"
               >
-                Sign in with Google
+                <img
+                  src={'./google.png'}
+                  width={20}
+                  height={20}
+                  alt="google logo"
+                />
+                <p className="text-center mt-1">Sign in with Google</p>
               </button>
             )}
           </div>
