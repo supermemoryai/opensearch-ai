@@ -107,10 +107,10 @@ function ChatPage({ user }: { user: Session | null }) {
 
       <main className="min-h-screen flex flex-col items-center justify-between p-4 md:p-24">
         <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-col gap-4 w-full lg:flex-row lg:items-center lg:justify-between">
             <a
               href="https://github.com/supermemoryai/opensearch-ai"
-              className="fixed flex items-center justify-between gap-4 left-0 top-0 w-full border-b border-gray-300 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto  lg:rounded-xl lg:border lg:p-4 bg-white px-2 md:px-0"
+              className="flex items-center justify-between gap-4 border-b border-gray-300 pb-6 pt-4 lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0"
             >
               Open source{" "}
               <svg
@@ -133,7 +133,7 @@ function ChatPage({ user }: { user: Session | null }) {
                       const mems = await getMem0Memories(user);
                       setUserMemories(mems ?? []);
                     }}
-                    className="p-4"
+                    className="p-4 w-full text-left lg:w-auto"
                   >
                     Saved memories
                   </button>
