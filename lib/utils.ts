@@ -1,15 +1,15 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { Parser } from "html-to-react";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const sanitizeText = (text: string) => {
-  let sanitizedText = text.replace(/(<([^>]+)>)/gi, "");
+export const sanitizeMarkup = (text: string) => {
+  const htmlToReactParser = Parser();
 
-  // remove &quot;
-  sanitizedText = sanitizedText.replace(/&quot;/g, "");
+  const reactElement = htmlToReactParser.parse(text);
 
-  return sanitizedText;
+  return reactElement;
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Blobs from "./Blobs";
 import Globe from "./Globe";
 import Image from "next/image";
@@ -19,24 +19,73 @@ import Markdown from "react-markdown";
 import {
   Credenza,
   CredenzaBody,
-  CredenzaClose,
   CredenzaContent,
   CredenzaDescription,
-  CredenzaFooter,
   CredenzaHeader,
   CredenzaTitle,
   CredenzaTrigger,
 } from "@/components/ui/credenza";
-import { sanitizeText } from "@/lib/utils";
+import { sanitizeMarkup } from "@/lib/utils";
+import { useSearchParams } from "next/navigation";
 
 function ChatPage({ user }: { user: Session | null }) {
   const [searchResultsData, setSearchResultsData] =
     useState<BingResults | null>(null);
 
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const searchParams = useSearchParams();
+
+  const initialQuery = searchParams.get("q") ?? "";
+
+  const { messages, input, handleInputChange, handleSubmit, append, setInput } =
+    useChat();
+
   const [customUserMemory, setCustomUserMemory] = useState<string | null>(null);
 
   const [userMemories, setUserMemories] = useState<Memory[]>([]);
+
+  const fetchSearch = async (
+    query: string,
+    e?: React.FormEvent<HTMLElement> | React.KeyboardEvent<HTMLTextAreaElement>
+  ) => {
+    e?.preventDefault();
+    e?.type === "keydown" && e.stopPropagation();
+
+    const data = await getSearchResultsFromMemory(query, user);
+    if (!data) return;
+
+    setSearchResultsData(data);
+
+    if (!e) {
+      append(
+        {
+          role: "user",
+          content: query,
+        },
+        {
+          body: {
+            data,
+            input: query,
+          },
+        }
+      );
+    }
+
+    handleSubmit(e, { body: { data, input: query } });
+
+    return data;
+  };
+
+  const initialRender = useRef(true);
+
+  useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false;
+      if (initialQuery) {
+        setInput(initialQuery);
+        fetchSearch(initialQuery);
+      }
+    }
+  }, [initialQuery]);
 
   return (
     <div className="relative h-screen">
@@ -96,12 +145,12 @@ function ChatPage({ user }: { user: Session | null }) {
                       {userMemories.length === 0 && (
                         <li>
                           Nothing here... Yet! Just start browsing and asking
-                          questions. I{"'"}ll remember it.
+                          questions. I&apos;ll remember it.
                         </li>
                       )}
-                      {userMemories.map((memory, index) => (
+                      {userMemories.map((memory) => (
                         <li
-                          key={index}
+                          key={memory.id}
                           className="text-sm border rounded-md p-2 flex gap-2 justify-between"
                         >
                           <span>{memory.memory}</span>
@@ -150,11 +199,6 @@ function ChatPage({ user }: { user: Session | null }) {
                       </form>
                     </ul>
                   </CredenzaBody>
-                  <CredenzaFooter>
-                    <CredenzaClose asChild>
-                      <button>Close</button>
-                    </CredenzaClose>
-                  </CredenzaFooter>
                 </CredenzaContent>
               </Credenza>
             )}
@@ -211,16 +255,19 @@ function ChatPage({ user }: { user: Session | null }) {
 
         {searchResultsData ? (
           <div className="flex flex-col gap-4 items-start max-w-3xl w-full mt-32 md:mt-8">
-            {messages.map((message, index) => (
-              <div key={index} className="w-full max-w-3xl flex flex-col gap-2">
+            {messages.map((message, i) => (
+              <div
+                key={`message-${i}`}
+                className="w-full max-w-3xl flex flex-col gap-2"
+              >
                 {message.role === "user" ? (
                   <div className="flex gap-4 font-bold text-2xl">
                     <Image
                       height={10}
                       width={10}
-                      alt="User Image"
                       src={user?.user?.image ?? "/user-placeholder.svg"}
                       className="rounded-full w-10 h-10 border-2 border-primary-foreground"
+                      alt="User profile picture"
                     />
                     <span>{message.content}</span>
                   </div>
@@ -232,14 +279,14 @@ function ChatPage({ user }: { user: Session | null }) {
                           .slice(0, 6)
                           .map((item, index) => (
                             <a
-                              href={item.url}
-                              key={index}
+                              key={`SearchResults-${message.id}-${index}`}
                               target="_blank"
                               rel="noopener noreferrer"
+                              href={item.url}
                             >
-                              <div className="bg-white border border-neutral-400 backdrop-blur-md rounded-xl bg-opacity-30 w-100 flex flex-col gap-4 p-2 flex gap-4 p-4 items-center">
+                              <div className="bg-white border border-neutral-400 backdrop-blur-md rounded-xl bg-opacity-30 w-56 flex flex-col gap-4 p-2 h-full">
                                 <div className="flex flex-col gap-2">
-                                  <div className="flex gap-1 items-center">
+                                  <div className="flex gap-2 items-center">
                                     <Image
                                       height={10}
                                       width={10}
@@ -252,7 +299,7 @@ function ChatPage({ user }: { user: Session | null }) {
                                     </h2>
                                   </div>
                                   <p className="text-sm line-clamp-3">
-                                    {sanitizeText(item.description)}
+                                    {sanitizeMarkup(item.description)}
                                   </p>
                                 </div>
                               </div>
@@ -274,14 +321,14 @@ function ChatPage({ user }: { user: Session | null }) {
                       <div className="flex gap-4 overflow-x-auto mt-4">
                         {searchResultsData?.web.results
                           .slice(0, 6)
-                          .map((item, index) => {
+                          .map((item, key) => {
                             const src = item.thumbnail?.src;
 
                             if (!src) return null;
 
                             return (
                               <Image
-                                key={index}
+                                key={item.url}
                                 src={src}
                                 height={100}
                                 width={100}
@@ -293,11 +340,11 @@ function ChatPage({ user }: { user: Session | null }) {
                         {searchResultsData.web.results.length > 4 && (
                           <div className="relative w-24 h-24">
                             <Image
-                              alt="Placeholder"
                               height={24}
                               width={24}
                               src="/placeholder.svg"
                               className="w-full h-full object-cover rounded"
+                              alt="placeholder"
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
                               <span className="text-white text-xl font-bold">
@@ -322,17 +369,9 @@ function ChatPage({ user }: { user: Session | null }) {
 
             {user && user.user ? (
               <form
+                id="search-form"
                 onSubmit={async (e) => {
-                  e.preventDefault();
-                  const data = await getSearchResultsFromMemory(input, user);
-                  if (!data) return;
-                  setSearchResultsData(data);
-                  handleSubmit(e, {
-                    body: {
-                      data,
-                      input,
-                    },
-                  });
+                  await fetchSearch(input, e);
                 }}
                 className="flex relative gap-2 max-w-xl w-full"
               >
@@ -346,20 +385,7 @@ function ChatPage({ user }: { user: Session | null }) {
                   //   keydown listener to submit form on enter
                   onKeyDown={async (e) => {
                     if (e.key === "Enter" && !e.shiftKey) {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      const data = await getSearchResultsFromMemory(
-                        input,
-                        user
-                      );
-                      if (!data) return;
-                      setSearchResultsData(data);
-                      handleSubmit(e, {
-                        body: {
-                          data,
-                          input,
-                        },
-                      });
+                      await fetchSearch(input, e);
                     }
                   }}
                 />
@@ -387,9 +413,15 @@ function ChatPage({ user }: { user: Session | null }) {
             ) : (
               <button
                 onClick={() => signIn("google")}
-                className="p-4 rounded-md bg-black text-white"
+                className="px-4 py-2 rounded-full bg-black text-white flex gap-2 justify-between items-center"
               >
-                Sign in with Google
+                <Image
+                  src={"/google.png"}
+                  width={20}
+                  height={20}
+                  alt="google logo"
+                />
+                <p className="text-center mt-1">Sign in with Google</p>
               </button>
             )}
           </div>
