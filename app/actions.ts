@@ -9,7 +9,7 @@ export const getSearchResultsFromMemory = async (
   user: Session | null
 ): Promise<BingResults | null> => {
   if (!query || !user?.user) return null;
-
+  
   console.log("User's query: ", query, user);
 
   const mem0Response = fetch('https://api.mem0.ai/v1/memories/', {
@@ -141,6 +141,6 @@ export const createCustomMemory = async (
   const json = await mem0Response.json();
 
   console.log(json)
-  
+
   return json;
 };

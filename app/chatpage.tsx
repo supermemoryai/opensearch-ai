@@ -97,11 +97,11 @@ function ChatPage({ user }: { user: Session | null }) {
                       {userMemories.length === 0 && (
                         <li>
                           Nothing here... Yet! Just start browsing and asking
-                          questions. I'll remember it.
+                          questions. I&apos;ll remember it.
                         </li>
                       )}
                       {userMemories.map((memory) => (
-                        <li className="text-sm border rounded-md p-2 flex gap-2 justify-between">
+                        <li key={memory.id} className="text-sm border rounded-md p-2 flex gap-2 justify-between">
                           <span>{memory.memory}</span>
                           <button
                             onClick={async () => deleteMemory(memory.id, user)}
@@ -209,8 +209,8 @@ function ChatPage({ user }: { user: Session | null }) {
 
         {searchResultsData ? (
           <div className="flex flex-col gap-4 items-start max-w-3xl w-full mt-32 md:mt-8">
-            {messages.map((message) => (
-              <div className="w-full max-w-3xl flex flex-col gap-2">
+            {messages.map((message, i) => (
+              <div key={`message-${i}`} className="w-full max-w-3xl flex flex-col gap-2">
                 {message.role === 'user' ? (
                   <div className="flex gap-4 font-bold text-2xl">
                     <img
@@ -225,8 +225,8 @@ function ChatPage({ user }: { user: Session | null }) {
                       <div className="flex flex-row gap-4 overflow-x-auto mt-4">
                         {searchResultsData?.web.results
                           .slice(0, 6)
-                          .map((item) => (
-                            <div className="bg-white border border-neutral-400 backdrop-blur-md rounded-xl bg-opacity-30 w-96 flex flex-col gap-4 p-2">
+                          .map((item, index) => (
+                            <div key={`result-${index}`} className="bg-white border border-neutral-400 backdrop-blur-md rounded-xl bg-opacity-30 w-96 flex flex-col gap-4 p-2">
                               <a
                                 href={item.url}
                                 target="_blank"
@@ -267,13 +267,14 @@ function ChatPage({ user }: { user: Session | null }) {
                       <div className="flex gap-4 overflow-x-auto mt-4">
                         {searchResultsData?.web.results
                           .slice(0, 6)
-                          .map((item) => {
+                          .map((item, i) => {
                             const src = item.thumbnail?.src;
 
                             if (!src) return null;
 
                             return (
                               <img
+                                key={`img-${i}`}
                                 src={src}
                                 alt={item.description}
                                 className="w-24 h-24 object-cover rounded"
