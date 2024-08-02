@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
+  Credenza,
+  CredenzaContent,
+  CredenzaDescription,
+  CredenzaHeader,
+  CredenzaTitle,
+  CredenzaTrigger,
+} from '@/components/ui/credenza';
 import DOMPurify from 'dompurify';
 
 export default function WebReferences({
@@ -14,9 +14,18 @@ export default function WebReferences({
 }: {
   searchResults: any;
 }) {
+  const extractDomain = (url: string) => {
+    try {
+      const { hostname } = new URL(url);
+      return hostname;
+    } catch (error) {
+      console.error('Invalid URL:', url);
+      return '';
+    }
+  };
   return (
     <>
-      <Dialog>
+      <Credenza>
         <div className="flex flex-col gap-2 mb-4">
           <div className="flex flex-row gap-4 overflow-x-auto mt-4">
             {searchResults?.web.results.slice(0, 6).map((item, index) => (
@@ -53,13 +62,13 @@ export default function WebReferences({
             ))}
 
             {searchResults.web.results.length > 6 && (
-              <DialogTrigger className="bg-white backdrop-blur-md rounded-xl bg-opacity-50 w-96 flex flex-col gap-4 p-4 h-32 cursor-pointer">
+              <CredenzaTrigger className="bg-white backdrop-blur-md rounded-xl bg-opacity-50 w-96 flex flex-col gap-4 p-4 h-32 cursor-pointer">
                 <div className="flex flex-col gap-4 p-4">
                   <h2 className="font-semibold">
                     {searchResults.web.results.length - 6} more results
                   </h2>
                 </div>
-              </DialogTrigger>
+              </CredenzaTrigger>
             )}
           </div>
 
@@ -95,23 +104,32 @@ export default function WebReferences({
           </div>
         </div>
 
-        <DialogContent className="max-h-[80vh] overflow-y-auto max-w-[70vw]">
-          <DialogHeader>
-            <DialogTitle>References</DialogTitle>
-            <DialogDescription>Search results from the web</DialogDescription>
-          </DialogHeader>
+        <CredenzaContent className="max-h-[80vh] overflow-y-auto ">
+          <CredenzaHeader>
+            <CredenzaTitle>References</CredenzaTitle>
+            <CredenzaDescription>
+              Search results from the web
+            </CredenzaDescription>
+          </CredenzaHeader>
           <div>
             {searchResults?.web.results.map((item: any) => (
-              <div key={item.url} className="flex flex-col gap-4 p-4">
-                <div className="flex gap-2 items-center">
+              <div
+                key={item.url}
+                className="p-4 bg-[#f4eaea] rounded-sm cursor-pointer my-2 mx-2"
+                onClick={() => {
+                  window.open(item.url, '_blank');
+                }}
+              >
+                <h2 className="font-semibold line-clamp-2 text-lg">
+                  {item.title}
+                </h2>
+                <div className="flex gap-2 items-center  rounded-full w-auto my-1">
                   <img
                     src={item.meta_url.favicon}
                     alt={item.description}
                     className="w-4 h-4 object-cover rounded"
                   />
-                  <h2 className="font-semibold line-clamp-2 text-lg">
-                    {item.title}
-                  </h2>
+                  <p>{extractDomain(item.url)}</p>
                 </div>
                 <p
                   className="text-sm line-clamp-3"
@@ -119,19 +137,11 @@ export default function WebReferences({
                     __html: DOMPurify.sanitize(item.description),
                   }}
                 ></p>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500"
-                >
-                  {item.url}
-                </a>
               </div>
             ))}
           </div>
-        </DialogContent>
-      </Dialog>
+        </CredenzaContent>
+      </Credenza>
     </>
   );
 }
