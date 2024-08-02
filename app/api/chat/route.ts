@@ -18,7 +18,6 @@ export const POST = async (request: Request): Promise<Response> => {
     apiKey: process.env.OPENAI_API_KEY,
   });
 
-  console.log(user?.user.email)
 
   const mem0Response = await fetch('https://api.mem0.ai/v1/memories/search/', {
     method: 'POST',
@@ -62,7 +61,7 @@ export const POST = async (request: Request): Promise<Response> => {
   ];
 
   const stream = await streamText({
-    model: openai('gpt-4o-mini-2024-07-18'),
+    model: openai('gpt-4o-mini'),
     messages: messages,
   });
 

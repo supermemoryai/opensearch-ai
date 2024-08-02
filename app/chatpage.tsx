@@ -263,11 +263,8 @@ function ChatPage({ user }: { user: Session | null }) {
 
         {searchResultsData ? (
           <div className="flex flex-col gap-4 items-start max-w-3xl w-full mt-32 md:mt-8">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className="w-full max-w-3xl flex flex-col gap-2"
-              >
+            {messages.map((message, i) => (
+              <div key={`message-${i}`} className="w-full max-w-3xl flex flex-col gap-2">
                 {message.role === 'user' ? (
                   <div className="flex gap-4 font-bold text-2xl">
                     <img
