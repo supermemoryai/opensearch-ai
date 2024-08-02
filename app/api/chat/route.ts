@@ -26,7 +26,7 @@ export const POST = async (request: Request): Promise<Response> => {
       Authorization: `Token ${process.env.MEM0_API_KEY}`,
     },
     body: JSON.stringify({
-      query: 'What do you konw about ' + body.input,
+      query: 'What do you know about ' + body.input,
       user_id: user?.user?.email,
     }),
   });

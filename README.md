@@ -13,7 +13,7 @@ It's like a perplexity / searchGPT clone, but for _you_.
 - [Next.js](https://nextjs.org/) - The React Framework
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - [Shadcn UI](https://tailwindui.com/) - A set of completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS
-- [Cobe](https://github.com/cobejs/cobe) - Globe animation
+- [Cobe](https://github.com/shuding/cobe) - Globe animation
 - [GPT-4o-mini](https://openai.com)
 - [Cloudflare Pages](https://pages.cloudflare.com/) - A platform for building and deploying web applications
 
