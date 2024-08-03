@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import Blobs from "./Blobs";
-import Globe from "./Globe";
-import Image from "next/image";
-import mem0Logo from "./assets/logo.png";
-import { Session } from "next-auth";
-import { signIn } from "next-auth/react";
+import React, { useEffect, useRef, useState, FormEvent } from 'react';
+import Blobs from './Blobs';
+import Globe from './Globe';
+import Image from 'next/image';
+import mem0Logo from './assets/logo.png';
+import { Session } from 'next-auth';
+import { signIn } from 'next-auth/react';
 import {
   createCustomMemory,
   deleteMemory,
@@ -54,6 +54,19 @@ function ChatPage({ user }: { user: Session | null }) {
     { memory: string; id: string }[]
   >([]);
 
+  // Handling Memory Submit
+  const handleMemorySubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!customUserMemory) return;
+    try {
+      const memory = await createCustomMemory(customUserMemory, user);
+      // @ts-ignore
+      setUserMemories([...userMemories, memory]);
+    } catch (error) {
+      console.error('Error creating memory:', error);
+    }
+  };
+
   const fetchSearch = async (
     query: string,
     e?: React.FormEvent<HTMLElement> | React.KeyboardEvent<HTMLTextAreaElement>
@@ -94,6 +107,7 @@ function ChatPage({ user }: { user: Session | null }) {
       }
     }
   }, [initialQuery]);
+
 
   return (
     <div className="relative h-screen">
@@ -181,15 +195,7 @@ function ChatPage({ user }: { user: Session | null }) {
                         </li>
                       ))}
                       <form
-                        onSubmit={async () => {
-                          if (!customUserMemory) return;
-                          const memory = await createCustomMemory(
-                            customUserMemory,
-                            user
-                          );
-                          // @ts-ignore
-                          setUserMemories([...userMemories, memory]);
-                        }}
+                        onSubmit={handleMemorySubmit}
                         className="flex justify-between items-center gap-2"
                       >
                         <input
