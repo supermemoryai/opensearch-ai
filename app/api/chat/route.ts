@@ -5,6 +5,10 @@ import { CoreMessage, streamText } from 'ai';
 
 export const runtime = 'edge';
 
+const openaiApiKey = process.env.OPENAI_API_KEY;
+const mem0ApiKey = process.env.MEM0_API_KEY;
+
+
 export const POST = async (request: Request): Promise<Response> => {
   const body = (await request.json()) as { data: BingResults; input: string };
 
@@ -14,8 +18,16 @@ export const POST = async (request: Request): Promise<Response> => {
     return new Response('Invalid request', { status: 400 });
   }
 
+  if (!openaiApiKey || !mem0ApiKey) {
+    console.error('Missing API keys:', {
+      openaiApiKey: !!openaiApiKey,
+      mem0ApiKey: !!mem0ApiKey,
+    });
+    return new Response('Missing API keys', { status: 500 });
+  }  
+
   const openai = createOpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: openaiApiKey,
   });
 
 
@@ -23,7 +35,7 @@ export const POST = async (request: Request): Promise<Response> => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Token ${process.env.MEM0_API_KEY}`,
+      Authorization: `Token ${mem0ApiKey}`,
     },
     body: JSON.stringify({
       query: 'What do you know about ' + body.input,
