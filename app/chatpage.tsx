@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, FormEvent } from "react";
 import Blobs from "./Blobs";
 import Globe from "./Globe";
 import Image from "next/image";
@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/credenza";
 import { sanitizeMarkup } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
+import WebReferences from "@/components/web-references";
 
 function ChatPage({ user }: { user: Session | null }) {
   const [searchResultsData, setSearchResultsData] =
@@ -42,6 +43,19 @@ function ChatPage({ user }: { user: Session | null }) {
   const [customUserMemory, setCustomUserMemory] = useState<string | null>(null);
 
   const [userMemories, setUserMemories] = useState<Memory[]>([]);
+
+  // Handling Memory Submit
+  const handleMemorySubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!customUserMemory) return;
+    try {
+      const memory = await createCustomMemory(customUserMemory, user);
+      // @ts-ignore
+      setUserMemories([...userMemories, memory]);
+    } catch (error) {
+      console.error("Error creating memory:", error);
+    }
+  };
 
   const fetchSearch = async (
     query: string,
@@ -173,15 +187,7 @@ function ChatPage({ user }: { user: Session | null }) {
                         </li>
                       ))}
                       <form
-                        onSubmit={async () => {
-                          if (!customUserMemory) return;
-                          const memory = (await createCustomMemory(
-                            customUserMemory,
-                            user
-                          )) as Memory;
-
-                          setUserMemories([...userMemories, memory]);
-                        }}
+                        onSubmit={handleMemorySubmit}
                         className="flex justify-between items-center gap-2"
                       >
                         <input
@@ -273,88 +279,7 @@ function ChatPage({ user }: { user: Session | null }) {
                   </div>
                 ) : (
                   <div>
-                    <div className="flex flex-col gap-2 mb-4">
-                      <div className="flex flex-row gap-4 overflow-x-auto mt-4">
-                        {searchResultsData?.web.results
-                          .slice(0, 6)
-                          .map((item, index) => (
-                            <a
-                              key={`SearchResults-${message.id}-${index}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={item.url}
-                            >
-                              <div className="bg-white border border-neutral-400 backdrop-blur-md rounded-xl bg-opacity-30 w-56 flex flex-col gap-4 p-2 h-full">
-                                <div className="flex flex-col gap-2">
-                                  <div className="flex gap-2 items-center">
-                                    <Image
-                                      height={10}
-                                      width={10}
-                                      src={item.meta_url.favicon}
-                                      alt={item.description}
-                                      className="w-4 h-4 object-cover rounded"
-                                    />
-                                    <h2 className="font-semibold line-clamp-2 text-sm text-neutral-500">
-                                      {item.title}
-                                    </h2>
-                                  </div>
-                                  <p className="text-sm line-clamp-3">
-                                    {sanitizeMarkup(item.description)}
-                                  </p>
-                                </div>
-                              </div>
-                            </a>
-                          ))}
-
-                        {searchResultsData.web.results.length > 6 && (
-                          <div className="bg-white backdrop-blur-md rounded-xl bg-opacity-50 w-96 flex flex-col gap-4 p-4 h-32">
-                            <div className="flex flex-col gap-4 p-4">
-                              <h2 className="font-semibold">
-                                {searchResultsData.web.results.length - 6} more
-                                results
-                              </h2>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="flex gap-4 overflow-x-auto mt-4">
-                        {searchResultsData?.web.results
-                          .slice(0, 6)
-                          .map((item, key) => {
-                            const src = item.thumbnail?.src;
-
-                            if (!src) return null;
-
-                            return (
-                              <Image
-                                key={item.url}
-                                src={src}
-                                height={100}
-                                width={100}
-                                alt={item.description}
-                                className="w-24 h-24 object-cover rounded"
-                              />
-                            );
-                          })}
-                        {searchResultsData.web.results.length > 4 && (
-                          <div className="relative w-24 h-24">
-                            <Image
-                              height={24}
-                              width={24}
-                              src="/placeholder.svg"
-                              className="w-full h-full object-cover rounded"
-                              alt="placeholder"
-                            />
-                            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
-                              <span className="text-white text-xl font-bold">
-                                +{searchResultsData.web.results.length - 4}
-                              </span>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
+                    <WebReferences searchResults={searchResultsData} />
                     <div className="prose lg:prose-xl" key={message.id}>
                       <Markdown>{message.content}</Markdown>
                     </div>
