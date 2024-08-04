@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState, FormEvent } from 'react';
 import Blobs from './Blobs';
 import Globe from './Globe';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import mem0Logo from './assets/logo.png';
 import { Session } from 'next-auth';
 import { signIn } from 'next-auth/react';
@@ -108,6 +109,7 @@ function ChatPage({ user }: { user: Session | null }) {
     }
   }, [initialQuery]);
 
+  const router = useRouter()
 
   return (
     <div className="relative h-screen">
@@ -221,7 +223,7 @@ function ChatPage({ user }: { user: Session | null }) {
           {searchResultsData && (
             <button
               onClick={() => {
-                window.location.href = '/';
+                router.push('/');
               }}
             >
               Home
