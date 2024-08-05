@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-'use client';
+"use client";
+
 
 import React, { useEffect, useRef, useState, FormEvent } from 'react';
 import Blobs from './Blobs';
@@ -9,26 +9,26 @@ import { useRouter } from 'next/navigation';
 import mem0Logo from './assets/logo.png';
 import { Session } from 'next-auth';
 import { signIn } from 'next-auth/react';
+
 import {
   createCustomMemory,
   deleteMemory,
   getMem0Memories,
   getSearchResultsFromMemory,
 } from "./actions";
-import { BingResults } from "./types";
+import { BingResults, Memory } from "./types";
 import { useChat } from "ai/react";
 import Markdown from "react-markdown";
 import {
   Credenza,
   CredenzaBody,
-  CredenzaClose,
   CredenzaContent,
   CredenzaDescription,
-  CredenzaFooter,
   CredenzaHeader,
   CredenzaTitle,
   CredenzaTrigger,
 } from "@/components/ui/credenza";
+import { sanitizeMarkup } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
 import WebReferences from "@/components/web-references";
 
@@ -40,20 +40,12 @@ function ChatPage({ user }: { user: Session | null }) {
 
   const initialQuery = searchParams.get("q") ?? "";
 
-  const {
-    messages,
-    input,
-    handleInputChange,
-    handleSubmit,
-    append,
-    setInput,
-  } = useChat();
+  const { messages, input, handleInputChange, handleSubmit, append, setInput } =
+    useChat();
 
   const [customUserMemory, setCustomUserMemory] = useState<string | null>(null);
 
-  const [userMemories, setUserMemories] = useState<
-    { memory: string; id: string }[]
-  >([]);
+  const [userMemories, setUserMemories] = useState<Memory[]>([]);
 
   // Handling Memory Submit
   const handleMemorySubmit = async (e: FormEvent) => {
@@ -64,7 +56,7 @@ function ChatPage({ user }: { user: Session | null }) {
       // @ts-ignore
       setUserMemories([...userMemories, memory]);
     } catch (error) {
-      console.error('Error creating memory:', error);
+      console.error("Error creating memory:", error);
     }
   };
 
@@ -81,15 +73,18 @@ function ChatPage({ user }: { user: Session | null }) {
     setSearchResultsData(data);
 
     if (!e) {
-      append({
-        role: "user",
-        content: query,
-      }, {
-        body: {
-          data,
-          input: query
+      append(
+        {
+          role: "user",
+          content: query,
+        },
+        {
+          body: {
+            data,
+            input: query,
+          },
         }
-      })
+      );
     }
 
     handleSubmit(e, { body: { data, input: query } });
@@ -109,6 +104,7 @@ function ChatPage({ user }: { user: Session | null }) {
     }
   }, [initialQuery]);
 
+
   const router = useRouter()
 
   return (
@@ -122,14 +118,14 @@ function ChatPage({ user }: { user: Session | null }) {
         </div>
       )}
 
-      <main className="min-h-screen flex flex-col items-center justify-between p-4 md:p-24">
+      <main className="min-h-screen flex flex-col items-center justify-between p-2">
         <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
           <div className="flex flex-col gap-4 w-full lg:flex-row lg:items-center lg:justify-between">
             <a
               href="https://github.com/supermemoryai/opensearch-ai"
               className="flex items-center justify-between gap-4 border-b border-gray-300 pb-6 pt-4 lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0"
             >
-              Open source{' '}
+              Open source{" "}
               <svg
                 viewBox="0 0 256 250"
                 width="20"
@@ -201,7 +197,7 @@ function ChatPage({ user }: { user: Session | null }) {
                         className="flex justify-between items-center gap-2"
                       >
                         <input
-                          value={customUserMemory ?? ''}
+                          value={customUserMemory ?? ""}
                           onChange={(e) => setCustomUserMemory(e.target.value)}
                           className="rounded-md border p-2 w-full"
                           placeholder="Type something here to add it to memory"
@@ -238,15 +234,15 @@ function ChatPage({ user }: { user: Session | null }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Built by{''}
+                Built by{""}
                 <Image
-                  src={'https://supermemory.ai/logo.svg'}
+                  src={"https://supermemory.ai/logo.svg"}
                   alt="Supermemory Logo"
                   className="invert dark:invert-0"
                   width={30}
                   height={30}
                   priority
-                />{' '}
+                />{" "}
                 Supermemory.ai
               </a>
               <a
@@ -255,7 +251,7 @@ function ChatPage({ user }: { user: Session | null }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Personalization by{' '}
+                Personalization by{" "}
                 <Image
                   src={mem0Logo}
                   alt="Mem0 Logo"
@@ -272,11 +268,16 @@ function ChatPage({ user }: { user: Session | null }) {
         {searchResultsData ? (
           <div className="flex flex-col gap-4 items-start max-w-3xl w-full mt-32 md:mt-8">
             {messages.map((message, i) => (
-              <div key={`message-${i}`} className="w-full max-w-3xl flex flex-col gap-2">
-                {message.role === 'user' ? (
+              <div
+                key={`message-${i}`}
+                className="w-full max-w-3xl flex flex-col gap-2"
+              >
+                {message.role === "user" ? (
                   <div className="flex gap-4 font-bold text-2xl">
-                    <img
-                      src={user?.user?.image ?? '/user-placeholder.svg'}
+                    <Image
+                      height={10}
+                      width={10}
+                      src={user?.user?.image ?? "/user-placeholder.svg"}
                       className="rounded-full w-10 h-10 border-2 border-primary-foreground"
                       alt="User profile picture"
                     />
@@ -314,7 +315,7 @@ function ChatPage({ user }: { user: Session | null }) {
                   className="rounded-xl font-sans max-w-xl w-full border border-blue-500/50 p-4 bg-white bg-opacity-30 backdrop-blur-xl min-h-20"
                   //   keydown listener to submit form on enter
                   onKeyDown={async (e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
+                    if (e.key === "Enter" && !e.shiftKey) {
                       await fetchSearch(input, e);
                     }
                   }}
@@ -342,11 +343,11 @@ function ChatPage({ user }: { user: Session | null }) {
               </form>
             ) : (
               <button
-                onClick={() => signIn('google')}
+                onClick={() => signIn("google")}
                 className="px-4 py-2 rounded-full bg-black text-white flex gap-2 justify-between items-center"
               >
-                <img
-                  src={'./google.png'}
+                <Image
+                  src={"/google.png"}
                   width={20}
                   height={20}
                   alt="google logo"

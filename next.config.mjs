@@ -20,6 +20,18 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "imgs.search.brave.com",
+      },
+    ],
+  },
 };
 
 export default withPWA(nextConfig);
