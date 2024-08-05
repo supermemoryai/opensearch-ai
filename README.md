@@ -8,7 +8,7 @@ It's like a perplexity / searchGPT clone, but for _you_.
 
 ### Powered by
 
-- [Mem0](https://mem0.ai) - Automatic memory collection and retrival
+- [Mem0](https://mem0.ai) - Automatic memory collection and retrieval
 - [Vercel AI ADK](https://github.com/vercel/ai) - A framework for building AI applications
 - [Next.js](https://nextjs.org/) - The React Framework
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
