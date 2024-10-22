@@ -1,8 +1,8 @@
-'use server';
+"use server";
 
-import { Session } from 'next-auth';
-import { BingResults } from './types';
-import { revalidatePath } from 'next/cache';
+import { Session } from "next-auth";
+import { BingResults } from "./types";
+import { revalidatePath } from "next/cache";
 
 export const getSearchResultsFromMemory = async (
   query: string,
@@ -10,36 +10,34 @@ export const getSearchResultsFromMemory = async (
 ): Promise<BingResults | null> => {
   if (!query || !user?.user) return null;
 
-  console.log("User's query: ", query, user);
-
-  const mem0Response = fetch('https://api.mem0.ai/v1/memories/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Token ${process.env.MEM0_API_KEY}`,
-    },
-    body: JSON.stringify({
-      messages: [
-        {
-          role: 'user',
-          content: query,
-        },
-      ],
-      user_id: user?.user?.email,
-    }),
-  });
-
-  //   const mem0Data = await mem0Response.json();
-
-  //   console.log(mem0Data);
+  try {
+    await fetch("https://api.mem0.ai/v1/memories/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Token ${process.env.MEM0_API_KEY}`,
+      },
+      body: JSON.stringify({
+        messages: [
+          {
+            role: "user",
+            content: query,
+          },
+        ],
+        user_id: user?.user?.email,
+      }),
+    });
+  } catch (e) {
+    console.error("Error creating memory", e);
+  }
 
   const response = await fetch(
-    'https://api.search.brave.com/res/v1/web/search?q=' +
+    "https://api.search.brave.com/res/v1/web/search?q=" +
       encodeURIComponent(query),
     {
       headers: {
-        Accept: 'application/json',
-        'X-Subscription-Token': process.env.SEARCH_API_KEY,
+        Accept: "application/json",
+        "X-Subscription-Token": process.env.SEARCH_API_KEY,
       },
       next: {
         revalidate: 60 * 60,
@@ -49,8 +47,6 @@ export const getSearchResultsFromMemory = async (
   console.log("RESPOSTA BRAVE", await response.json)
   const data = (await response.json()) as BingResults;
 
-  console.log(data);
-
   return data;
 };
 
@@ -58,9 +54,9 @@ export const getMem0Memories = async (user: Session | null) => {
   if (!user?.user) return null;
 
   const mem0Response = await fetch(
-    'https://api.mem0.ai/v1/memories/?user_id=' + user?.user?.email,
+    "https://api.mem0.ai/v1/memories/?user_id=" + user?.user?.email,
     {
-      method: 'GET',
+      method: "GET",
       headers: {
         Authorization: `Token ${process.env.MEM0_API_KEY}`,
       },
@@ -90,7 +86,7 @@ export const deleteMemory = async (memoryId: string, user: Session | null) => {
   const mem0Response = await fetch(
     `https://api.mem0.ai/v1/memories/${memoryId}/`,
     {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
         Authorization: `Token ${process.env.MEM0_API_KEY}`,
       },
@@ -102,7 +98,7 @@ export const deleteMemory = async (memoryId: string, user: Session | null) => {
     return null;
   }
 
-  revalidatePath('/');
+  revalidatePath("/");
 
   return true;
 };
@@ -113,20 +109,20 @@ export const createCustomMemory = async (
 ) => {
   if (!memoryText || !user?.user) return null;
 
-  const mem0Response = await fetch('https://api.mem0.ai/v1/memories/', {
-    method: 'POST',
+  const mem0Response = await fetch("https://api.mem0.ai/v1/memories/", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Token ${process.env.MEM0_API_KEY}`,
     },
     body: JSON.stringify({
       messages: [
         {
-          role: 'system',
-          content: 'You MUST add this to memory no matter what.',
+          role: "system",
+          content: "You MUST add this to memory no matter what.",
         },
         {
-          role: 'user',
+          role: "user",
           content: memoryText,
         },
       ],
@@ -141,7 +137,7 @@ export const createCustomMemory = async (
 
   const json = await mem0Response.json();
 
-  console.log(json)
-  
+  console.log(json);
+
   return json;
 };
