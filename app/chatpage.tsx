@@ -1,38 +1,37 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import React, { useEffect, useRef, useState, FormEvent } from 'react';
-import Blobs from './Blobs';
-import Globe from './Globe';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import mem0Logo from './assets/logo.png';
+import {
+  Credenza,
+  CredenzaBody,
+  CredenzaContent,
+  CredenzaDescription,
+  CredenzaHeader,
+  CredenzaTitle,
+  CredenzaTrigger
+} from "@/components/ui/credenza";
+import WebReferences from "@/components/web-references";
+import { useChat } from "ai/react";
 import { Session } from 'next-auth';
 import { signIn } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { useRouter, useSearchParams } from 'next/navigation';
+import React, { FormEvent, useEffect, useRef, useState } from 'react';
+import Markdown from "react-markdown";
 import {
   createCustomMemory,
   deleteMemory,
   getMem0Memories,
   getSearchResultsFromMemory,
 } from "./actions";
+import mem0Logo from './assets/logo.png';
+import Blobs from './Blobs';
+import Globe from './Globe';
 import { BingResults } from "./types";
-import { useChat } from "ai/react";
-import Markdown from "react-markdown";
-import {
-  Credenza,
-  CredenzaBody,
-  CredenzaClose,
-  CredenzaContent,
-  CredenzaDescription,
-  CredenzaFooter,
-  CredenzaHeader,
-  CredenzaTitle,
-  CredenzaTrigger,
-} from "@/components/ui/credenza";
-import { useSearchParams } from "next/navigation";
-import WebReferences from "@/components/web-references";
 
 function ChatPage({ user }: { user: Session | null }) {
+  const t = useTranslations("HomePage");
   const [searchResultsData, setSearchResultsData] =
     useState<BingResults | null>(null);
 
@@ -124,12 +123,12 @@ function ChatPage({ user }: { user: Session | null }) {
 
       <main className="min-h-screen flex flex-col items-center justify-between p-4 md:p-24">
         <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-          <div className="flex flex-col gap-4 w-full lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-4 w-full lg:flex-row lg:items-center">
             <a
               href="https://github.com/supermemoryai/opensearch-ai"
-              className="flex items-center justify-between gap-4 border-b border-gray-300 pb-6 pt-4 lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0"
+              className="flex items-center justify-between gap-4 border-b border-gray-300 pb-6 pt-4 px-2 lg:static lg:border lg:rounded-xl lg:w-auto lg:bg-transparent"
             >
-              Open source{' '}
+              {t('openSource')}{' '}
               <svg
                 viewBox="0 0 256 250"
                 width="20"
@@ -152,24 +151,23 @@ function ChatPage({ user }: { user: Session | null }) {
                     }}
                     className="p-4 w-full text-left lg:w-auto"
                   >
-                    Saved memories
+                    {t('savedMemories')}
                   </button>
                 </CredenzaTrigger>
                 <CredenzaContent>
                   <CredenzaHeader>
                     <CredenzaTitle className="text-lg font-bold">
-                      Your Memories
+                      {t('yourMemories')}
                     </CredenzaTitle>
                     <CredenzaDescription>
-                      Information automatically collected about you by mem0.ai
+                      {t('informationCollectedByMem0')}
                     </CredenzaDescription>
                   </CredenzaHeader>
                   <CredenzaBody>
                     <ul className="list-disc max-h-96 overflow-y-auto flex flex-col gap-2">
                       {userMemories.length === 0 && (
                         <li>
-                          Nothing here... Yet! Just start browsing and asking
-                          questions. I&apos;ll remember it.
+                          {t('nothingHere')}
                         </li>
                       )}
                       {userMemories.map((memory) => (
@@ -204,13 +202,13 @@ function ChatPage({ user }: { user: Session | null }) {
                           value={customUserMemory ?? ''}
                           onChange={(e) => setCustomUserMemory(e.target.value)}
                           className="rounded-md border p-2 w-full"
-                          placeholder="Type something here to add it to memory"
+                          placeholder={t('typeSomethingToAddMemory')}
                         />
                         <button
                           className="p-2 rounded-md bg-black text-white"
                           type="submit"
                         >
-                          Add
+                          {t('add')}
                         </button>
                       </form>
                     </ul>
@@ -231,14 +229,14 @@ function ChatPage({ user }: { user: Session | null }) {
           )}
 
           {!searchResultsData && (
-            <div className="fixed bottom-0 left-0 flex flex-col gap-4 h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+            <div className="fixed bottom-0 left-0 flex flex-col gap-4 h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-full lg:bg-none">
               <a
                 className="pointer-events-none flex place-items-center items-center justify-center gap-2 p-8 lg:pointer-events-auto lg:p-0 font-sans text-lg"
                 href="https://supermemory.ai"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Built by{''}
+                {t('builtBy')}{''}
                 <Image
                   src={'https://supermemory.ai/logo.svg'}
                   alt="Supermemory Logo"
@@ -255,7 +253,7 @@ function ChatPage({ user }: { user: Session | null }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Personalization by{' '}
+                {t('personalizationBy')}{' '}
                 <Image
                   src={mem0Logo}
                   alt="Mem0 Logo"
@@ -310,7 +308,7 @@ function ChatPage({ user }: { user: Session | null }) {
                   onChange={handleInputChange}
                   name="query"
                   cols={2}
-                  placeholder="What are you looking for?"
+                  placeholder={t('searchPlaceholder')}
                   className="rounded-xl font-sans max-w-xl w-full border border-blue-500/50 p-4 bg-white bg-opacity-30 backdrop-blur-xl min-h-20"
                   //   keydown listener to submit form on enter
                   onKeyDown={async (e) => {
@@ -351,7 +349,7 @@ function ChatPage({ user }: { user: Session | null }) {
                   height={20}
                   alt="google logo"
                 />
-                <p className="text-center mt-1">Sign in with Google</p>
+                <p className="text-center mt-1">{t('signInWithGoogle')}</p>
               </button>
             )}
           </div>

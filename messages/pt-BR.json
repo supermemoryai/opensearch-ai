@@ -9,6 +9,9 @@
     "yourMemories": "Suas Memórias",
     "add": "Adicionar",
     "close": "Fechar",
-    "searchPlaceholder": "O que você está procurando?"
+    "searchPlaceholder": "O que você está procurando?",
+    "informationCollectedByMem0": "Informações coletadas automaticamente sobre você pelo mem0.ai",
+    "nothingHere": "Nada aqui... Ainda! Basta começar a navegar e fazer perguntas. Eu vou me lembrar.",
+    "typeSomethingToAddMemory": "Digite algo aqui para adicionar à memória"
   }
 }
