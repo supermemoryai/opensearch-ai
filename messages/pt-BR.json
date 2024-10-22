@@ -1,0 +1,14 @@
+{
+  "HomePage": {
+    "home": "Início",
+    "openSource": "Código Aberto",
+    "builtBy": "Desenvolvido por",
+    "signInWithGoogle": "Entrar com Google",
+    "personalizationBy": "Personalização por",
+    "savedMemories": "Memórias Salvas",
+    "yourMemories": "Suas Memórias",
+    "add": "Adicionar",
+    "close": "Fechar",
+    "searchPlaceholder": "O que você está procurando?"
+  }
+}

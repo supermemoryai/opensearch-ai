@@ -1,0 +1,14 @@
+{
+  "HomePage": {
+    "home": "Home",
+    "openSource": "Open Source",
+    "builtBy": "Built by",
+    "signInWithGoogle": "Sign in with Google",
+    "personalizationBy": "Personalization by",
+    "savedMemories": "Saved Memories",
+    "yourMemories": "Your Memories",
+    "add": "Add",
+    "close": "Close",
+    "searchPlaceholder": "What are you looking for?"
+  }
+}

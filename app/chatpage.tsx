@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Blobs from './Blobs';
-import Globe from './Globe';
-import Image from 'next/image';
-import mem0Logo from './assets/logo.png';
-import { Session } from 'next-auth';
-import { signIn } from 'next-auth/react';
+import React, { useState } from "react";
+import Blobs from "./Blobs";
+import Globe from "./Globe";
+import Image from "next/image";
+import mem0Logo from "./assets/logo.png";
+import { Session } from "next-auth";
+import { signIn } from "next-auth/react";
 import {
   createCustomMemory,
   deleteMemory,
   getMem0Memories,
   getSearchResultsFromMemory,
-} from './actions';
-import { BingResults } from './types';
-import { useChat } from 'ai/react';
-import Markdown from 'react-markdown';
+} from "./actions";
+import { BingResults } from "./types";
+import { useChat } from "ai/react";
+import Markdown from "react-markdown";
 import {
   Credenza,
   CredenzaBody,
@@ -26,11 +26,14 @@ import {
   CredenzaHeader,
   CredenzaTitle,
   CredenzaTrigger,
-} from '@/components/ui/credenza';
+} from "@/components/ui/credenza";
+import { useTranslations } from "next-intl";
 
 function ChatPage({ user }: { user: Session | null }) {
   const [searchResultsData, setSearchResultsData] =
     useState<BingResults | null>(null);
+
+  const t = useTranslations("HomePage");
 
   const { messages, input, handleInputChange, handleSubmit } = useChat();
   const [customUserMemory, setCustomUserMemory] = useState<string | null>(null);
@@ -57,7 +60,7 @@ function ChatPage({ user }: { user: Session | null }) {
               href="https://github.com/supermemoryai/opensearch-ai"
               className="fixed flex items-center justify-between gap-4 left-0 top-0 w-full border-b border-gray-300 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto  lg:rounded-xl lg:border lg:p-4 bg-white px-2 md:px-0"
             >
-              Open source{' '}
+              {t('openSource')}{" "}
               <svg
                 viewBox="0 0 256 250"
                 width="20"
@@ -134,7 +137,7 @@ function ChatPage({ user }: { user: Session | null }) {
                         className="flex justify-between items-center gap-2"
                       >
                         <input
-                          value={customUserMemory ?? ''}
+                          value={customUserMemory ?? ""}
                           onChange={(e) => setCustomUserMemory(e.target.value)}
                           className="rounded-md border p-2 w-full"
                           placeholder="Type something here to add it to memory"
@@ -161,10 +164,10 @@ function ChatPage({ user }: { user: Session | null }) {
           {searchResultsData && (
             <button
               onClick={() => {
-                window.location.href = '/';
+                window.location.href = "/";
               }}
             >
-              Home
+              {t('home')}
             </button>
           )}
 
@@ -176,15 +179,15 @@ function ChatPage({ user }: { user: Session | null }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Built by{''}
+                {t('builtBy')}{""}
                 <Image
-                  src={'https://supermemory.ai/logo.svg'}
+                  src={"https://supermemory.ai/logo.svg"}
                   alt="Supermemory Logo"
                   className="invert dark:invert-0"
                   width={30}
                   height={30}
                   priority
-                />{' '}
+                />{" "}
                 Supermemory.ai
               </a>
               <a
@@ -193,7 +196,7 @@ function ChatPage({ user }: { user: Session | null }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Personalization by{' '}
+                {t('personalizationBy')}{" "}
                 <Image
                   src={mem0Logo}
                   alt="Mem0 Logo"
@@ -211,10 +214,10 @@ function ChatPage({ user }: { user: Session | null }) {
           <div className="flex flex-col gap-4 items-start max-w-3xl w-full mt-32 md:mt-8">
             {messages.map((message) => (
               <div className="w-full max-w-3xl flex flex-col gap-2">
-                {message.role === 'user' ? (
+                {message.role === "user" ? (
                   <div className="flex gap-4 font-bold text-2xl">
                     <img
-                      src={user?.user?.image ?? '/user-placeholder.svg'}
+                      src={user?.user?.image ?? "/user-placeholder.svg"}
                       className="rounded-full w-10 h-10 border-2 border-primary-foreground"
                     />
                     <span>{message.content}</span>
@@ -328,11 +331,11 @@ function ChatPage({ user }: { user: Session | null }) {
                   onChange={handleInputChange}
                   name="query"
                   cols={2}
-                  placeholder="What are you looking for?"
+                  placeholder={t('searchPlaceholder')}
                   className="rounded-xl font-sans max-w-xl w-full border border-blue-500/50 p-4 bg-white bg-opacity-30 backdrop-blur-xl min-h-20"
                   //   keydown listener to submit form on enter
                   onKeyDown={async (e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
+                    if (e.key === "Enter" && !e.shiftKey) {
                       e.preventDefault();
                       e.stopPropagation();
                       const data = await getSearchResultsFromMemory(
@@ -373,10 +376,10 @@ function ChatPage({ user }: { user: Session | null }) {
               </form>
             ) : (
               <button
-                onClick={() => signIn('google')}
+                onClick={() => signIn("google")}
                 className="p-4 rounded-md bg-black text-white"
               >
-                Sign in with Google
+                {t('signInWithGoogle')}
               </button>
             )}
           </div>
