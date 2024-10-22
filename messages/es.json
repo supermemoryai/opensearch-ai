@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "home": "Inicio",
+    "openSource": "Código Abierto",
+    "builtBy": "Desarrollado por",
+    "signInWithGoogle": "Iniciar sesión con Google",
+    "personalizationBy": "Personalización por",
+    "savedMemories": "Memorias Guardadas",
+    "yourMemories": "Tus Memorias",
+    "add": "Añadir",
+    "close": "Cerrar",
+    "searchPlaceholder": "¿Qué estás buscando?",
+    "informationCollectedByMem0": "Información recopilada automáticamente sobre ti por mem0.ai",
+    "nothingHere": "Nada aquí... ¡Todavía! Solo comienza a navegar y hacer preguntas. Lo recordaré.",
+    "typeSomethingToAddMemory": "Escribe algo aquí para añadirlo a la memoria"
+  }
+}

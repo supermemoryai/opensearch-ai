@@ -44,6 +44,7 @@ export const getSearchResultsFromMemory = async (
       },
     }
   );
+  console.log("RESPOSTA BRAVE", await response.json)
   const data = (await response.json()) as BingResults;
 
   return data;
