@@ -387,7 +387,7 @@ function ChatPage({ user }: { user: Session | null }) {
           ) : (
             <div className="flex flex-col gap-4 w-full items-center justify-center -mt-40">
               <Globe />
-              <div className="text-4xl md:text-6xl">Open Search GPT</div>
+              <div className="text-4xl md:text-6xl">Open Search</div>
 
               {user && user.user ? (
                 <form
